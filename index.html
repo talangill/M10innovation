@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 10 — Business Improvement</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAniUhzQ39k6EbRyhdO9vCwGoEaafbVCyQ",
+    authDomain: "module10-tracker.firebaseapp.com",
+    databaseURL: "https://module10-tracker-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "module10-tracker",
+    storageBucket: "module10-tracker.firebasestorage.app",
+    messagingSenderId: "296538591983",
+    appId: "1:296538591983:web:1d477b8d920cf5ec38811a"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1901,7 +1916,7 @@ restoreAll();
 updateProgress();
 calcGrade();
 // ============================================================
-// GROUP FEATURE
+// GROUP FEATURE — Firebase Realtime Database backend
 // ============================================================
 const G_WEEKS = [
   {n:1,hint:'Pitch 1 — problem statement + reframe.'},
@@ -1965,16 +1980,38 @@ const G_AV_COLORS = [
 
 let GC = '', GUN = '', G_currentHW = 1;
 
-async function gStorGet(key, shared=false) {
-  try { const r = await window.storage.get(key, shared); return r ? JSON.parse(r.value) : null; } catch(e) { return null; }
+// ---------- Firebase helpers ----------
+// Private data: stored in localStorage (only this browser)
+// Shared data:  stored in Firebase under groups/{GC}/{UN}/...
+// Group-readable shared data: groups/{GC}/{UN}/public/...
+
+function gPrivGet(key) {
+  try { const v = localStorage.getItem('m10p:' + GC + ':' + GUN + ':' + key); return v ? JSON.parse(v) : null; } catch(e) { return null; }
 }
-async function gStorSet(key, val, shared=false) {
-  try { await window.storage.set(key, JSON.stringify(val), shared); } catch(e) {}
+function gPrivSet(key, val) {
+  try { localStorage.setItem('m10p:' + GC + ':' + GUN + ':' + key, JSON.stringify(val)); } catch(e) {}
 }
 
-function gPk(s) { return `m10:${GC}:${GUN}:${s}`; }       // private
-function gSk(user, s) { return `m10:${GC}:${user}:${s}`; } // shared, named user
+// Read from Firebase
+async function gFbGet(path) {
+  try {
+    const snap = await db.ref(path).get();
+    return snap.exists() ? snap.val() : null;
+  } catch(e) { console.warn('Firebase read error', e); return null; }
+}
 
+// Write to Firebase
+async function gFbSet(path, val) {
+  try {
+    await db.ref(path).set(val);
+  } catch(e) { console.warn('Firebase write error', e); }
+}
+
+// Firebase path helpers
+function gSharedPath(user, sub) { return 'groups/' + GC + '/' + user.replace(/[.#$\[\]]/g, '_') + '/' + sub; }
+function gGroupPath(sub)        { return 'groups/' + GC + '/' + sub; }
+
+// ---------- Join / leave ----------
 async function gJoin() {
   const code = document.getElementById('g-inp-code').value.trim().toUpperCase();
   const name = document.getElementById('g-inp-name').value.trim();
@@ -1982,7 +2019,8 @@ async function gJoin() {
   GC = code; GUN = name;
   localStorage.setItem('m10_gc', GC);
   localStorage.setItem('m10_un', GUN);
-  await gStorSet(gSk(GUN, 'present'), { joined: Date.now() }, true);
+  // Register presence so group members list picks this person up
+  await gFbSet(gSharedPath(GUN, 'present'), { joined: Date.now(), name: GUN });
   gLaunch();
 }
 
@@ -2008,6 +2046,7 @@ function gLaunch() {
   gRenderMyReflection();
 }
 
+// ---------- Week buttons ----------
 function gBuildWeekBtns() {
   const c = document.getElementById('g-week-btns');
   c.innerHTML = '';
@@ -2024,13 +2063,14 @@ function gBuildWeekBtns() {
   });
 }
 
+// ---------- Weekly plan (private) ----------
 async function gRenderWeekPlan(n) {
   const w = G_WEEKS[n - 1];
-  const saved = await gStorGet(gPk('plan:' + n)) || { focus: '', resp: '', done: '' };
-  const health = await gStorGet(gSk(GUN, 'health:' + n), true);
+  const saved = gPrivGet('plan:' + n) || { focus: '', resp: '', done: '' };
+  const health = await gFbGet(gSharedPath(GUN, 'health/' + n));
   const fade = n >= 5;
   const doneLbl = fade ? 'My own success criteria' : "How I'll know I've done enough";
-  const donePh = fade ? 'Define your own goal for this week.' : 'What does "done" look like?';
+  const donePh  = fade ? 'Define your own goal for this week.' : 'What does "done" look like?';
   document.getElementById('g-week-content').innerHTML = `
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
@@ -2062,19 +2102,19 @@ async function gRenderWeekPlan(n) {
 async function gSavePlan(n) {
   const d = {
     focus: document.getElementById('gp-focus').value,
-    resp: document.getElementById('gp-resp').value,
-    done: document.getElementById('gp-done').value
+    resp:  document.getElementById('gp-resp').value,
+    done:  document.getElementById('gp-done').value
   };
-  await gStorSet(gPk('plan:' + n), d);
+  gPrivSet('plan:' + n, d);
   await gPublishPct();
   gFlashSaved('gp-focus');
 }
 
 async function gPublishPct() {
-  const saved = await gStorGet(gPk('checks')) || {};
+  const saved = gPrivGet('checks') || {};
   const done = Object.values(saved).filter(Boolean).length;
-  const pct = Math.round(done / G_CHECKS.length * 100);
-  await gStorSet(gSk(GUN, 'pct'), { pct, ts: Date.now() }, true);
+  const pct  = Math.round(done / G_CHECKS.length * 100);
+  await gFbSet(gSharedPath(GUN, 'pct'), { pct, ts: Date.now() });
 }
 
 function gFlashSaved(nearId) {
@@ -2083,27 +2123,28 @@ function gFlashSaved(nearId) {
   const t = document.createElement('span');
   t.textContent = 'Saved';
   t.style.cssText = 'font-size:12px;color:var(--muted);margin-left:10px';
-  const btn = el.closest('.card').querySelector('button.primary');
+  const btn = el.closest('.card') && el.closest('.card').querySelector('button.primary');
   if (btn) { btn.insertAdjacentElement('afterend', t); setTimeout(() => t.remove(), 2000); }
 }
 
+// ---------- Checklist (private — localStorage only) ----------
 async function gRenderMyChecklist() {
-  const saved = await gStorGet(gPk('checks')) || {};
+  const saved = gPrivGet('checks') || {};
   const byW = {};
   G_CHECKS.forEach((c, i) => { if (!byW[c.w]) byW[c.w] = []; byW[c.w].push({ ...c, i }); });
   let html = '';
   Object.keys(byW).sort((a, b) => a - b).forEach(w => {
     const items = byW[w];
-    const done = items.filter(c => saved[c.i]).length;
-    const pct = Math.round(done / items.length * 100);
+    const done  = items.filter(c => saved[c.i]).length;
+    const pct   = Math.round(done / items.length * 100);
     html += `<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
       <span style="font-weight:500;font-size:14px">Week ${w}</span>
       <span style="font-size:12px;color:var(--muted)">${done}/${items.length}</span></div>
       <div class="g-pbar-wrap" style="margin-bottom:10px"><div class="g-pbar-fill" style="width:${pct}%"></div></div>`;
     items.forEach(c => {
       const ch = !!saved[c.i];
-      html += `<div class="check-item${ch ? ' checked' : ''}" style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer" onclick="gToggleCheck(${c.i},this)">
-        <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;${ch ? 'background:var(--green);border-color:var(--green)' : ''}">
+      html += `<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer" onclick="gToggleCheck(${c.i},this)">
+        <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid ${ch ? 'var(--green)' : 'var(--border)'};flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;background:${ch ? 'var(--green)' : 'transparent'}">
           ${ch ? '<div style="width:4px;height:8px;border:2px solid white;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px)"></div>' : ''}
         </div>
         <span style="font-size:13px;flex:1;${ch ? 'color:var(--muted);text-decoration:line-through' : ''}">${c.t}</span>
@@ -2116,25 +2157,25 @@ async function gRenderMyChecklist() {
 }
 
 async function gToggleCheck(i, row) {
-  const saved = await gStorGet(gPk('checks')) || {};
+  const saved = gPrivGet('checks') || {};
   saved[i] = !saved[i];
-  await gStorSet(gPk('checks'), saved);
-  // Re-render rather than surgically patch — keeps it simple and correct
+  gPrivSet('checks', saved);
   await gRenderMyChecklist();
   await gPublishPct();
 }
 
 function gUpdatePct(saved) {
   const done = Object.values(saved).filter(Boolean).length;
-  const pct = Math.round(done / G_CHECKS.length * 100);
+  const pct  = Math.round(done / G_CHECKS.length * 100);
   document.getElementById('g-pct-lbl').textContent = pct + '%';
-  document.getElementById('g-pct-bar').style.width = pct + '%';
+  document.getElementById('g-pct-bar').style.width  = pct + '%';
 }
 
+// ---------- Pitch feedback (shared via Firebase) ----------
 async function gRenderMyPitches() {
   let html = '';
   for (const p of G_PITCHES) {
-    const saved = await gStorGet(gSk(GUN, 'pfeed:' + p.n), true) || { coaches: '', personal: '' };
+    const saved = await gFbGet(gSharedPath(GUN, 'pfeed/' + p.n)) || { coaches: '', personal: '' };
     html += `<div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <span style="font-weight:500">${p.label}</span>
@@ -2142,11 +2183,11 @@ async function gRenderMyPitches() {
       </div>
       <div style="margin-bottom:8px">
         <div style="font-size:12px;color:var(--muted);margin-bottom:5px">Feedback received from coaches</div>
-        <textarea class="g-textarea" id="gpfc-${p.n}" placeholder="What did the coaches say?">${saved.coaches}</textarea>
+        <textarea class="g-textarea" id="gpfc-${p.n}" placeholder="What did the coaches say?">${saved.coaches || ''}</textarea>
       </div>
       <div style="margin-bottom:10px">
         <div style="font-size:12px;color:var(--muted);margin-bottom:5px">What you'll do differently</div>
-        <textarea class="g-textarea" id="gpfp-${p.n}" placeholder="What will you actually change?">${saved.personal}</textarea>
+        <textarea class="g-textarea" id="gpfp-${p.n}" placeholder="What will you actually change?">${saved.personal || ''}</textarea>
       </div>
       <button class="g-btn primary" onclick="gSavePF(${p.n})">Save</button>
     </div>`;
@@ -2156,11 +2197,12 @@ async function gRenderMyPitches() {
 
 async function gSavePF(n) {
   const d = {
-    coaches: document.getElementById('gpfc-' + n).value,
+    coaches:  document.getElementById('gpfc-' + n).value,
     personal: document.getElementById('gpfp-' + n).value,
+    name: GUN,
     ts: Date.now()
   };
-  await gStorSet(gSk(GUN, 'pfeed:' + n), d, true);
+  await gFbSet(gSharedPath(GUN, 'pfeed/' + n), d);
   const cards = document.querySelectorAll('#g-my-pitches-content .card');
   if (cards[n - 1]) {
     const t = document.createElement('span');
@@ -2171,10 +2213,11 @@ async function gSavePF(n) {
   }
 }
 
+// ---------- Reflection (private) ----------
 async function gRenderMyReflection() {
   let html = '';
   for (const p of G_PITCHES) {
-    const saved = await gStorGet(gPk('refl:' + p.n)) || {};
+    const saved = gPrivGet('refl:' + p.n) || {};
     html += `<div class="card"><div style="font-weight:500;margin-bottom:10px">${p.label}
       <span style="font-size:12px;background:var(--purple-light);color:var(--purple);padding:2px 10px;border-radius:20px;margin-left:6px">${p.week}</span></div>`;
     G_REFL_QS.forEach((q, qi) => {
@@ -2188,12 +2231,21 @@ async function gRenderMyReflection() {
   document.getElementById('g-my-reflection-content').innerHTML = html;
 }
 
-async function gSaveRefl(n) {
+function gSaveRefl(n) {
   const d = {};
-  G_REFL_QS.forEach((_, qi) => { d['q' + qi] = document.getElementById(`grefl-${n}-${qi}`).value; });
-  await gStorSet(gPk('refl:' + n), d);
+  G_REFL_QS.forEach((_, qi) => { d['q' + qi] = document.getElementById('grefl-' + n + '-' + qi).value; });
+  gPrivSet('refl:' + n, d);
+  const cards = document.querySelectorAll('#g-my-reflection-content .card');
+  if (cards[n - 1]) {
+    const t = document.createElement('span');
+    t.textContent = 'Saved';
+    t.style.cssText = 'font-size:12px;color:var(--muted);margin-left:10px';
+    cards[n - 1].querySelector('button').insertAdjacentElement('afterend', t);
+    setTimeout(() => t.remove(), 2000);
+  }
 }
 
+// ---------- Health check modal ----------
 function gOpenHealth(w) {
   G_currentHW = w;
   document.getElementById('g-modal-title').textContent = 'Team health check — Week ' + w;
@@ -2207,40 +2259,38 @@ function gCloseModal() { document.getElementById('g-health-modal').style.display
 
 async function gSubmitHealth() {
   const d = {
-    comm: +document.getElementById('gh-comm').value,
-    work: +document.getElementById('gh-work').value,
-    mom: +document.getElementById('gh-mom').value,
+    comm:  +document.getElementById('gh-comm').value,
+    work:  +document.getElementById('gh-work').value,
+    mom:   +document.getElementById('gh-mom').value,
     trust: +document.getElementById('gh-trust').value,
     ts: Date.now()
   };
-  await gStorSet(gSk(GUN, 'health:' + G_currentHW), d, true);
+  await gFbSet(gSharedPath(GUN, 'health/' + G_currentHW), d);
   gCloseModal();
   gRenderWeekPlan(G_currentHW);
 }
 
+// ---------- Group overview helpers ----------
 async function gGetMembers() {
   try {
-    const res = await window.storage.list('m10:' + GC + ':', true);
-    if (!res || !res.keys) return [GUN];
-    const names = new Set();
-    res.keys.forEach(k => {
-      const m = k.match(new RegExp('^m10:' + GC + ':([^:]+):'));
-      if (m) names.add(m[1]);
-    });
-    names.add(GUN);
-    return [...names].sort();
+    const snap = await db.ref('groups/' + GC).get();
+    if (!snap.exists()) return [GUN];
+    const names = Object.keys(snap.val());
+    if (!names.includes(GUN)) names.push(GUN);
+    return names.sort();
   } catch(e) { return [GUN]; }
 }
 
 async function gRenderGrpProgress() {
+  document.getElementById('g-grp-progress-content').innerHTML = '<p style="font-size:13px;color:var(--muted)">Loading...</p>';
   const members = await gGetMembers();
   let html = '<div class="card">';
   for (let i = 0; i < members.length; i++) {
-    const name = members[i];
-    const isMe = name === GUN;
-    const pctData = await gStorGet(gSk(name, 'pct'), true);
-    const pct = pctData ? pctData.pct : 0;
-    const ac = G_AV_COLORS[i % G_AV_COLORS.length];
+    const name   = members[i];
+    const isMe   = name === GUN;
+    const pctData = await gFbGet(gSharedPath(name, 'pct'));
+    const pct    = pctData ? pctData.pct : 0;
+    const ac     = G_AV_COLORS[i % G_AV_COLORS.length];
     const initials = name.split(' ').map(x => x[0]).join('').toUpperCase().slice(0, 2);
     html += `<div class="g-member-row">
       <div class="g-avatar" style="background:${ac.bg};color:${ac.fg}">${initials}</div>
@@ -2256,6 +2306,7 @@ async function gRenderGrpProgress() {
 }
 
 async function gRenderGrpPitches() {
+  document.getElementById('g-grp-pitches-content').innerHTML = '<p style="font-size:13px;color:var(--muted)">Loading...</p>';
   const members = await gGetMembers();
   let html = '';
   for (const p of G_PITCHES) {
@@ -2264,17 +2315,17 @@ async function gRenderGrpPitches() {
     let any = false;
     for (let i = 0; i < members.length; i++) {
       const name = members[i];
-      const feed = await gStorGet(gSk(name, 'pfeed:' + p.n), true);
+      const feed = await gFbGet(gSharedPath(name, 'pfeed/' + p.n));
       if (!feed || (!feed.coaches && !feed.personal)) continue;
       any = true;
-      const ac = G_AV_COLORS[i % G_AV_COLORS.length];
+      const ac       = G_AV_COLORS[i % G_AV_COLORS.length];
       const initials = name.split(' ').map(x => x[0]).join('').toUpperCase().slice(0, 2);
       html += `<div style="margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
           <div class="g-avatar" style="background:${ac.bg};color:${ac.fg}">${initials}</div>
           <span style="font-size:13px;font-weight:500">${name}</span>
         </div>
-        ${feed.coaches ? `<p style="font-size:13px;margin-bottom:4px"><span style="color:var(--muted)">Coach feedback:</span> ${feed.coaches}</p>` : ''}
+        ${feed.coaches  ? `<p style="font-size:13px;margin-bottom:4px"><span style="color:var(--muted)">Coach feedback:</span> ${feed.coaches}</p>`  : ''}
         ${feed.personal ? `<p style="font-size:13px"><span style="color:var(--muted)">Will do differently:</span> ${feed.personal}</p>` : ''}
       </div>`;
     }
@@ -2285,20 +2336,21 @@ async function gRenderGrpPitches() {
 }
 
 async function gRenderGrpHealth() {
+  document.getElementById('g-grp-health-content').innerHTML = '<p style="font-size:13px;color:var(--muted)">Loading...</p>';
   const members = await gGetMembers();
   let html = '';
   for (const w of G_WEEKS) {
     const scores = { comm: [], work: [], mom: [], trust: [] };
     for (const name of members) {
-      const h = await gStorGet(gSk(name, 'health:' + w.n), true);
+      const h = await gFbGet(gSharedPath(name, 'health/' + w.n));
       if (h) { scores.comm.push(h.comm); scores.work.push(h.work); scores.mom.push(h.mom); scores.trust.push(h.trust); }
     }
-    const n = scores.comm.length;
+    const n   = scores.comm.length;
     const avg = arr => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : null;
     const [ac, aw, am, at] = [avg(scores.comm), avg(scores.work), avg(scores.mom), avg(scores.trust)];
     const hcol = v => v === null ? 'var(--muted)' : parseFloat(v) >= 7 ? 'var(--green)' : parseFloat(v) >= 5 ? 'var(--amber)' : 'var(--red)';
     html += `<div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center${n ? ';margin-bottom:0' : ''}">
+      <div style="display:flex;justify-content:space-between;align-items:center${n ? '' : ''}">
         <span style="font-weight:500">Week ${w.n}</span>
         <span style="font-size:12px;color:var(--muted)">${n} response${n !== 1 ? 's' : ''}</span>
       </div>
@@ -2313,6 +2365,7 @@ async function gRenderGrpHealth() {
   document.getElementById('g-grp-health-content').innerHTML = html;
 }
 
+// ---------- Tab switching ----------
 function gSwitchMain(v, el) {
   document.querySelectorAll('.group-tabs .group-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
@@ -2335,7 +2388,7 @@ function gShowGrp(s, el) {
   document.getElementById('ggrp-' + s).classList.add('active');
 }
 
-// Auto-restore session
+// ---------- Auto-restore session ----------
 (function() {
   const gc = localStorage.getItem('m10_gc');
   const un = localStorage.getItem('m10_un');
