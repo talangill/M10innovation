@@ -690,6 +690,27 @@
   .refl-intro-chips { display: flex; gap: 6px; margin-top: 16px; flex-wrap: wrap; position: relative; }
   .refl-intro-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
 
+
+  /* ── LEARNING GOALS PANEL ── */
+  .lg-panel { padding: 0 24px 20px; border-bottom: 1px solid var(--border); }
+  .lg-header { display: flex; align-items: center; gap: 8px; padding: 16px 0 12px; }
+  .lg-header-text { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+  .lg-clip-row { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+  .lg-clip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid var(--border); color: var(--muted); background: var(--bg); }
+  .lg-clip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .lg-goal { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .lg-goal:last-child { border-bottom: none; }
+  .lg-num { width: 22px; height: 22px; border-radius: 50%; background: var(--green-light); color: var(--green); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .lg-goal-body { flex: 1; }
+  .lg-goal-text { font-size: 13px; line-height: 1.5; margin-bottom: 4px; }
+  .lg-clip-ref { font-size: 11px; color: var(--muted); }
+  .lg-clip-badge { display: inline-block; padding: 1px 7px; border-radius: 10px; background: var(--green-light); color: var(--green); font-weight: 500; margin-right: 4px; }
+  .lg-self-check { margin-top: 8px; padding: 10px 14px; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--green); }
+  .lg-self-check-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin-bottom: 4px; }
+  .lg-self-check-q { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.5; }
+  .lg-toggle { font-size: 12px; color: var(--accent); cursor: pointer; padding: 10px 0 0; display: inline-block; }
+  .lg-toggle:hover { text-decoration: underline; }
+
 </style>
 </head>
 <body>
@@ -1291,6 +1312,78 @@
           <div class="card-header">
             <div class="card-icon" style="background:var(--green-light)">🌱</div>
             <div class="card-header-text"><h3>Regenerative Transition</h3><p>Business Integration 1</p></div>
+          </div>
+          <div class="lg-panel" id="lg-regen-panel">
+            <div class="lg-header">
+              <div class="lg-header-text">Learning goals — what to take away from the knowledge clips</div>
+            </div>
+            <div class="lg-clip-row">
+              <span class="lg-clip"><span class="lg-clip-dot" style="background:#1d7a4e"></span>Clip 1 — Intro to regenerative business</span>
+              <span class="lg-clip"><span class="lg-clip-dot" style="background:#2d5be3"></span>Clip 2 — Earth systems &amp; planetary boundaries</span>
+              <span class="lg-clip"><span class="lg-clip-dot" style="background:#6b3fa0"></span>Clip 4 — Nature, biodiversity &amp; SBTN</span>
+              <span class="lg-clip"><span class="lg-clip-dot" style="background:#c47a0a"></span>Clip 6 — 5 steps to regenerative transition</span>
+            </div>
+
+            <div class="lg-goal">
+              <div class="lg-num">1</div>
+              <div class="lg-goal-body">
+                <div class="lg-goal-text">Explain the difference between <strong>degenerative, sustainable, and regenerative</strong> business using the Bill Reed spectrum — and give a real hospitality example of each.</div>
+                <div class="lg-clip-ref"><span class="lg-clip-badge">Clip 1</span>Look for: the spectrum from "business as usual" → traditional sustainability → restorative → regenerative. The key distinction is <em>limiting damage</em> vs. <em>actively healing</em>.</div>
+                <div class="lg-self-check">
+                  <div class="lg-self-check-label">Test yourself</div>
+                  <div class="lg-self-check-q">Where on the spectrum does your case hotel sit right now? Where does your concept aim to take it?</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg-goal">
+              <div class="lg-num">2</div>
+              <div class="lg-goal-body">
+                <div class="lg-goal-text">Name and explain the <strong>4 principles of regenerative business</strong> — healing not limiting, systems thinking, place-based &amp; collaborative, and mindset shift — and apply at least one concretely to your case hotel.</div>
+                <div class="lg-clip-ref"><span class="lg-clip-badge">Clip 1</span>These are the four markers you use to judge whether an action is truly regenerative. Sustainability initiatives that don't meet these are "just" sustainable — not regenerative.</div>
+                <div class="lg-self-check">
+                  <div class="lg-self-check-label">Test yourself</div>
+                  <div class="lg-self-check-q">Pick one principle. What would it look like applied specifically to your hotel's location and client challenge?</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg-goal">
+              <div class="lg-num">3</div>
+              <div class="lg-goal-body">
+                <div class="lg-goal-text">Describe what <strong>planetary boundaries</strong> are, identify which of the 9 are most directly relevant to your case hotel, and explain the concrete business risk of crossing them.</div>
+                <div class="lg-clip-ref"><span class="lg-clip-badge">Clip 2</span>Focus on the hospitality examples — ski resorts, coral reefs, Baltic Sea algae blooms. Every boundary has a direct industry consequence. Your hotel is exposed to some of these right now.</div>
+                <div class="lg-self-check">
+                  <div class="lg-self-check-label">Test yourself</div>
+                  <div class="lg-self-check-q">Which 2–3 planetary boundaries pose the biggest risk to your specific case hotel — and how? Could you explain the financial impact to a hotel owner?</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg-goal">
+              <div class="lg-num">4</div>
+              <div class="lg-goal-body">
+                <div class="lg-goal-text">Explain what <strong>science-based targets for nature (SBTN)</strong> are, why nature targets are location-dependent unlike climate targets, and what a land or freshwater target could mean for a hotel in practice.</div>
+                <div class="lg-clip-ref"><span class="lg-clip-badge">Clip 4</span>The Maas River phosphorus calculation is a worked example — understand the logic, not just the numbers. The key insight: targets depend on the <em>condition of the local ecosystem</em>, not a global average.</div>
+                <div class="lg-self-check">
+                  <div class="lg-self-check-label">Test yourself</div>
+                  <div class="lg-self-check-q">If your case hotel is in the Netherlands, what land target might apply? What would it mean concretely — a green roof, supplier standards, landscape engagement?</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg-goal">
+              <div class="lg-num">5</div>
+              <div class="lg-goal-body">
+                <div class="lg-goal-text">Walk through the <strong>5-step regenerative transition framework</strong> (Get inspired → Seek advice → Check your chain → Set targets → Collaborate) and make at least one specific, well-researched recommendation per step for your case hotel.</div>
+                <div class="lg-clip-ref"><span class="lg-clip-badge">Clip 6</span>Note step zero: avoid and reduce harm first. You cannot skip to regeneration. For each of the 5 steps, the clip names specific tools — Conservation Evidence, regeneration.org, restore.eco — use them.</div>
+                <div class="lg-self-check">
+                  <div class="lg-self-check-label">Test yourself</div>
+                  <div class="lg-self-check-q">For "Check your chain" — pick one product your case hotel uses and trace a pressure it creates on nature or society. Can you recommend a concrete alternative or supplier action?</div>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="checklist">
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Studied Regenerative Transition theory (Moodle theory section)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
