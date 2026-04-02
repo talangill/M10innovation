@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 10 — Business Improvement</title>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/firebase@9.23.0/compat/app.js"></script>
+<script src="https://unpkg.com/firebase@9.23.0/compat/database.js"></script>
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyAniUhzQ39k6EbRyhdO9vCwGoEaafbVCyQ",
@@ -1662,6 +1662,12 @@
             </div>
             <button class="g-btn primary" onclick="gJoin()" style="width:100%">Join / create group</button>
             <p style="font-size:12px;color:var(--muted);margin-top:10px;text-align:center">Share the same code with your group members so everyone syncs.</p>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                <span id="g-firebase-status" style="font-size:12px;color:var(--muted)">Firebase status unknown</span>
+                <button class="g-btn" onclick="gTestConnection()" style="font-size:12px;white-space:nowrap">Test connection</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1674,6 +1680,7 @@
               <span style="font-size:13px;color:var(--muted);margin-left:8px">— <span id="g-lbl-name"></span></span>
             </div>
             <button class="g-btn" onclick="gLeave()" style="font-size:12px">Switch group</button>
+            <button class="g-btn" onclick="gClearMyData()" style="font-size:12px;color:var(--red);border-color:var(--red)">Clear my data</button>
           </div>
 
           <!-- TOP TABS -->
@@ -2388,11 +2395,60 @@ function gShowGrp(s, el) {
   document.getElementById('ggrp-' + s).classList.add('active');
 }
 
+// ---------- Clear my data ----------
+async function gClearMyData() {
+  if (!confirm('This will delete all your private data (checklist, plans, reflections) and your shared data (pitch feedback, health checks, progress) for group ' + GC + '.\n\nThis cannot be undone. Continue?')) return;
+  // Clear localStorage for this group+user
+  const prefix = 'm10p:' + GC + ':' + GUN + ':';
+  Object.keys(localStorage).filter(k => k.startsWith(prefix)).forEach(k => localStorage.removeItem(k));
+  // Clear Firebase entries for this user
+  try {
+    await db.ref(gSharedPath(GUN, '')).remove();
+  } catch(e) { console.warn('Firebase clear error', e); }
+  // Also clear the session keys
+  localStorage.removeItem('m10_gc');
+  localStorage.removeItem('m10_un');
+  GC = ''; GUN = '';
+  document.getElementById('g-app-screen').style.display = 'none';
+  document.getElementById('g-join-screen').style.display = 'block';
+  document.getElementById('nav-group-label').textContent = 'Join Group';
+  alert('Your data has been cleared. You can rejoin a group at any time.');
+}
+
+// ---------- Firebase connection test ----------
+async function gTestConnection() {
+  const statusEl = document.getElementById('g-firebase-status');
+  if (!statusEl) return;
+  statusEl.textContent = 'Testing connection...';
+  statusEl.style.color = 'var(--muted)';
+  try {
+    await db.ref('.info/connected').get();
+    // Try a small write and read to confirm read/write rules work
+    const testRef = db.ref('_connectionTest');
+    await testRef.set({ ts: Date.now() });
+    const snap = await testRef.get();
+    await testRef.remove();
+    if (snap.exists()) {
+      statusEl.textContent = '✓ Firebase connected — group sync is working';
+      statusEl.style.color = 'var(--green)';
+    } else {
+      statusEl.textContent = '⚠ Firebase reachable but read failed — check database rules';
+      statusEl.style.color = 'var(--amber)';
+    }
+  } catch(e) {
+    statusEl.textContent = '✗ Could not reach Firebase: ' + e.message;
+    statusEl.style.color = 'var(--red)';
+  }
+}
+
 // ---------- Auto-restore session ----------
 (function() {
   const gc = localStorage.getItem('m10_gc');
   const un = localStorage.getItem('m10_un');
   if (gc && un) { GC = gc; GUN = un; gLaunch(); }
+  // Always run connection test so status is visible on the join screen
+  // (also useful after gLeave() brings user back to join screen)
+  setTimeout(gTestConnection, 500);
 })();
 // ============================================================
 
