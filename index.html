@@ -4,20 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 10 — Business Improvement</title>
-<script src="https://unpkg.com/firebase@9.23.0/compat/app.js"></script>
-<script src="https://unpkg.com/firebase@9.23.0/compat/database.js"></script>
 <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAniUhzQ39k6EbRyhdO9vCwGoEaafbVCyQ",
-    authDomain: "module10-tracker.firebaseapp.com",
-    databaseURL: "https://module10-tracker-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "module10-tracker",
-    storageBucket: "module10-tracker.firebasestorage.app",
-    messagingSenderId: "296538591983",
-    appId: "1:296538591983:web:1d477b8d920cf5ec38811a"
+  // Firebase Realtime Database via REST API — no external scripts needed
+  const FB_URL = "https://module10-tracker-default-rtdb.europe-west1.firebasedatabase.app";
+
+  const db = {
+    _url: function(path) {
+      return FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
+    },
+    ref: function(path) {
+      const url = FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
+      return {
+        get: async function() {
+          const r = await fetch(url);
+          if (!r.ok) throw new Error("Firebase GET failed: " + r.status);
+          const val = await r.json();
+          return { exists: () => val !== null, val: () => val };
+        },
+        set: async function(data) {
+          const r = await fetch(url, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+          if (!r.ok) throw new Error("Firebase PUT failed: " + r.status);
+        },
+        remove: async function() {
+          const r = await fetch(url, { method: "DELETE" });
+          if (!r.ok) throw new Error("Firebase DELETE failed: " + r.status);
+        }
+      };
+    }
   };
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
 </script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -2282,7 +2300,9 @@ async function gGetMembers() {
   try {
     const snap = await db.ref('groups/' + GC).get();
     if (!snap.exists()) return [GUN];
-    const names = Object.keys(snap.val());
+    const val = snap.val();
+    // val is an object whose keys are sanitised member names
+    const names = typeof val === 'object' && val !== null ? Object.keys(val) : [];
     if (!names.includes(GUN)) names.push(GUN);
     return names.sort();
   } catch(e) { return [GUN]; }
@@ -2422,17 +2442,17 @@ async function gTestConnection() {
   statusEl.textContent = 'Testing connection...';
   statusEl.style.color = 'var(--muted)';
   try {
-    await db.ref('.info/connected').get();
-    // Try a small write and read to confirm read/write rules work
+    // Write a test value, read it back, then delete it
     const testRef = db.ref('_connectionTest');
-    await testRef.set({ ts: Date.now() });
+    const ts = Date.now();
+    await testRef.set({ ts });
     const snap = await testRef.get();
     await testRef.remove();
-    if (snap.exists()) {
+    if (snap.exists() && snap.val() && snap.val().ts === ts) {
       statusEl.textContent = '✓ Firebase connected — group sync is working';
       statusEl.style.color = 'var(--green)';
     } else {
-      statusEl.textContent = '⚠ Firebase reachable but read failed — check database rules';
+      statusEl.textContent = '⚠ Firebase reached but read/write failed — check database rules';
       statusEl.style.color = 'var(--amber)';
     }
   } catch(e) {
