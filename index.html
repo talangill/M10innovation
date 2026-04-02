@@ -6,14 +6,14 @@
 <title>Module 10 — Business Improvement</title>
 <script>
   // Firebase Realtime Database via REST API — no external scripts needed
-  const FB_URL = "https://module10-tracker-default-rtdb.europe-west1.firebasedatabase.app";
+  window.FB_URL = "https://module10-tracker-default-rtdb.europe-west1.firebasedatabase.app";
 
-  const db = {
+  window.db = {
     _url: function(path) {
-      return FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
+      return window.FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
     },
     ref: function(path) {
-      const url = FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
+      const url = window.FB_URL + "/" + path.replace(/^\//, '').replace(/\/$/, '') + ".json";
       return {
         get: async function() {
           const r = await fetch(url);
