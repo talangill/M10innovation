@@ -2190,6 +2190,7 @@
           <button class="refl-tab active" onclick="reflShow('pitches',this)">After each pitch</button>
           <button class="refl-tab" onclick="reflShow('design',this)">Design thinking</button>
           <button class="refl-tab" onclick="reflShow('business',this)">Business integration</button>
+          <button class="refl-tab" onclick="reflShow('oral',this)">Oral prep</button>
         </div>
 
         <!-- PITCH REFLECTIONS -->
@@ -2488,6 +2489,165 @@
               </div>
             </div>
           </div>
+        <div class="refl-stab" id="refl-oral">
+          <div class="refl-intro-banner">
+            <h3>Oral assessment preparation</h3>
+            <p>These are the actual questions from your oral defence. Write out draft answers here — the act of writing forces you to find the gaps in your reasoning before the examiner does.</p>
+            <div class="refl-intro-chips">
+              <span class="refl-intro-chip">6 phases + cross-cutting questions</span>
+              <span class="refl-intro-chip">Draft answers, not perfect ones</span>
+              <span class="refl-intro-chip">Saved privately in your browser</span>
+            </div>
+          </div>
+
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--teal-light)">👁</div>
+              <div class="refl-card-header-text"><h3>Empathize</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">If you had 90 seconds to explain your empathize phase to a sceptical examiner who thinks you didn't talk to enough real users — what would you say?</div>
+              <span class="refl-label">Who was your primary user and how did you decide?</span>
+              <textarea class="refl-textarea" id="r-oral-emp-1" placeholder="Be specific — not 'hotel guests' but who exactly, and what evidence led you to them as the right focus..." oninput="reflAutoSave('oral-emp','1',this.value)"></textarea>
+              <span class="refl-label">Which methods did you use and why those methods?</span>
+              <textarea class="refl-textarea" id="r-oral-emp-2" placeholder="Name the specific research methods. Why were they the right fit for this user and context? What could they reveal that other methods couldn't?" oninput="reflAutoSave('oral-emp','2',this.value)"></textarea>
+              <span class="refl-label">What assumptions did you start with — and which were challenged?</span>
+              <textarea class="refl-textarea" id="r-oral-emp-3" placeholder="Be honest. What did you think you knew before you started talking to users? What turned out to be wrong or more complicated?" oninput="reflAutoSave('oral-emp','3',this.value)"></textarea>
+              <span class="refl-label">One insight that genuinely surprised you</span>
+              <textarea class="refl-textarea" id="r-oral-emp-4" placeholder="Not a neat insight that confirmed what you expected — one that caught you off guard and changed something in your thinking..." oninput="reflAutoSave('oral-emp','4',this.value)"></textarea>
+              <span class="refl-label">How did empathy influence later design decisions?</span>
+              <textarea class="refl-textarea" id="r-oral-emp-5" placeholder="Trace the connection: a specific insight from empathize led to a specific choice in define or ideate. Make that chain explicit." oninput="reflAutoSave('oral-emp','5',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-emp')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-emp">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--accent-light)">📍</div>
+              <div class="refl-card-header-text"><h3>Define</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">If the examiner says your problem statement is too broad, what is your defence — and what would you change if they're right?</div>
+              <span class="refl-label">How did you translate research into your problem statement?</span>
+              <textarea class="refl-textarea" id="r-oral-def-1" placeholder="Walk through the synthesis step. What patterns emerged? How did you move from raw data to a focused problem?" oninput="reflAutoSave('oral-def','1',this.value)"></textarea>
+              <span class="refl-label">What problems did you explicitly choose NOT to address, and why?</span>
+              <textarea class="refl-textarea" id="r-oral-def-2" placeholder="This is a question most students don't prepare for. Examiners ask it to test whether your scope was deliberate or just accidental." oninput="reflAutoSave('oral-def','2',this.value)"></textarea>
+              <span class="refl-label">How did your definition of the problem evolve over time?</span>
+              <textarea class="refl-textarea" id="r-oral-def-3" placeholder="What did your problem statement look like at Pitch 1 vs. now? What changed it — and what stayed the same?" oninput="reflAutoSave('oral-def','3',this.value)"></textarea>
+              <span class="refl-label">How did the define phase shape your ideation?</span>
+              <textarea class="refl-textarea" id="r-oral-def-4" placeholder="Make the connection explicit: your problem statement or reframe led directly to certain types of ideas and ruled out others. Show that thread." oninput="reflAutoSave('oral-def','4',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-def')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-def">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--purple-light)">💡</div>
+              <div class="refl-card-header-text"><h3>Ideate</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">If the examiner asks why you didn't consider a completely different type of solution — one that seems obvious in hindsight — what's your answer?</div>
+              <span class="refl-label">How many ideas did you seriously consider before choosing a direction?</span>
+              <textarea class="refl-textarea" id="r-oral-ide-1" placeholder="Give a real number and describe the range. Examiners can tell if you only ever had one idea dressed up as a choice." oninput="reflAutoSave('oral-ide','1',this.value)"></textarea>
+              <span class="refl-label">Describe an idea you rejected — and exactly why.</span>
+              <textarea class="refl-textarea" id="r-oral-ide-2" placeholder="Name a specific rejected idea. What was good about it? What made you rule it out? Was it feasibility, desirability, viability — or something else?" oninput="reflAutoSave('oral-ide','2',this.value)"></textarea>
+              <span class="refl-label">What criteria did you use to evaluate and narrow down ideas?</span>
+              <textarea class="refl-textarea" id="r-oral-ide-3" placeholder="How did you decide? Was it structured (FDV criteria, a matrix) or more intuitive? Can you defend that process?" oninput="reflAutoSave('oral-ide','3',this.value)"></textarea>
+              <span class="refl-label">In hindsight, did you explore the solution space widely enough?</span>
+              <textarea class="refl-textarea" id="r-oral-ide-4" placeholder="Be honest — this is a self-reflection question and examiners appreciate candour. If you went narrow too quickly, say so and explain what you'd do differently." oninput="reflAutoSave('oral-ide','4',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-ide')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-ide">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--amber-light)">🔧</div>
+              <div class="refl-card-header-text"><h3>Prototype</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">If the examiner says your prototype wasn't realistic enough to generate meaningful feedback, how do you respond?</div>
+              <span class="refl-label">What was the specific goal of your prototype at that stage?</span>
+              <textarea class="refl-textarea" id="r-oral-pro-1" placeholder="A prototype tests a question. What question were you trying to answer? Not 'does it work' — something more specific about a specific assumption." oninput="reflAutoSave('oral-pro','1',this.value)"></textarea>
+              <span class="refl-label">Why did you choose this level of fidelity?</span>
+              <textarea class="refl-textarea" id="r-oral-pro-2" placeholder="Low fidelity (sketches, paper) or higher fidelity (digital, physical model)? Why was that level appropriate for what you needed to learn at that moment?" oninput="reflAutoSave('oral-pro','2',this.value)"></textarea>
+              <span class="refl-label">What did your prototype NOT capture well — and why did that matter?</span>
+              <textarea class="refl-textarea" id="r-oral-pro-3" placeholder="Every prototype has limits. What aspects of your concept could the prototype not test? Did those untested aspects later become problems?" oninput="reflAutoSave('oral-pro','3',this.value)"></textarea>
+              <span class="refl-label">How did prototyping help you think differently about your idea?</span>
+              <textarea class="refl-textarea" id="r-oral-pro-4" placeholder="What did you discover by making it that you couldn't have discovered just by thinking or researching? Be specific." oninput="reflAutoSave('oral-pro','4',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-pro')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-pro">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--green-light)">✅</div>
+              <div class="refl-card-header-text"><h3>Test</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">If your concept launched tomorrow and failed — which testing insight that you received but didn't fully act on would you wish you had listened to?</div>
+              <span class="refl-label">Who did you test with, and why those people specifically?</span>
+              <textarea class="refl-textarea" id="r-oral-tes-1" placeholder="Name the profile of your testers. Were they representative of your actual user? If not — why did you choose them anyway?" oninput="reflAutoSave('oral-tes','1',this.value)"></textarea>
+              <span class="refl-label">What was the most important thing you learned from testing?</span>
+              <textarea class="refl-textarea" id="r-oral-tes-2" placeholder="Not the most comfortable thing — the most important. Even if it was critical feedback that required you to rethink something." oninput="reflAutoSave('oral-tes','2',this.value)"></textarea>
+              <span class="refl-label">Did any feedback contradict your expectations — and what did you do with it?</span>
+              <textarea class="refl-textarea" id="r-oral-tes-3" placeholder="Examiners look for how you handle disconfirming evidence. Did you act on it, explain it away, or ignore it? Be honest and explain your reasoning." oninput="reflAutoSave('oral-tes','3',this.value)"></textarea>
+              <span class="refl-label">Were there results you chose NOT to act on? Why?</span>
+              <textarea class="refl-textarea" id="r-oral-tes-4" placeholder="This is a critical thinking question. Not all feedback is right — sometimes you should push back. If you did, explain your reasoning clearly." oninput="reflAutoSave('oral-tes','4',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-tes')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-tes">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--coral-light)">🔗</div>
+              <div class="refl-card-header-text"><h3>Integration</h3><p>Draft your answers — writing forces the clarity that speaking requires</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">Summarise your entire design thinking journey in 90 seconds — from the first user insight to the final concept — as a coherent story with a clear logic running through it.</div>
+              <span class="refl-label">Where specifically did you loop back to an earlier phase — and what triggered it?</span>
+              <textarea class="refl-textarea" id="r-oral-int-1" placeholder="Name a concrete moment: 'After testing, we went back to Define because...' Not a general statement about iteration — a specific example." oninput="reflAutoSave('oral-int','1',this.value)"></textarea>
+              <span class="refl-label">What trade-offs did you make during the process?</span>
+              <textarea class="refl-textarea" id="r-oral-int-2" placeholder="What did you sacrifice to make something else work? Speed vs. depth of research? Ambition vs. feasibility? Name the trade-off and defend the choice." oninput="reflAutoSave('oral-int','2',this.value)"></textarea>
+              <span class="refl-label">Which step had the biggest impact on your final outcome?</span>
+              <textarea class="refl-textarea" id="r-oral-int-3" placeholder="One phase shaped everything that came after it more than the others. Which one, and why? This requires you to understand your own process at depth." oninput="reflAutoSave('oral-int','3',this.value)"></textarea>
+              <span class="refl-label">How do you see the five phases as connected rather than linear?</span>
+              <textarea class="refl-textarea" id="r-oral-int-4" placeholder="Describe the actual shape of your process — where you moved back, where phases overlapped, where a later phase sent you back to an earlier one." oninput="reflAutoSave('oral-int','4',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-int')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-int">Saved</span>
+              </div>
+            </div>
+          </div>
+          <div class="refl-card">
+            <div class="refl-card-header">
+              <div class="refl-card-icon" style="background:var(--bg)">🎯</div>
+              <div class="refl-card-header-text"><h3>Cross-cutting questions</h3><p>These can appear at any point in the oral — prepare them separately</p></div>
+            </div>
+            <div class="refl-body">
+              <div class="refl-prompt">Examiners use these to test whether you understand the process as a whole, not just your own project. They are the hardest questions to prepare for because they require stepping back from your own work.</div>
+              <span class="refl-label">Which step did you find most difficult, and why?</span>
+              <textarea class="refl-textarea" id="r-oral-cross-1" placeholder="Be specific and honest. This isn't a trick question — examiners want to see self-awareness, not a polished answer." oninput="reflAutoSave('oral-cross','1',this.value)"></textarea>
+              <span class="refl-label">Where do novice designers typically struggle most in this process?</span>
+              <textarea class="refl-textarea" id="r-oral-cross-2" placeholder="This tests whether you understand the process beyond just your own experience of it. Think about what you observed in other groups or what you know from theory..." oninput="reflAutoSave('oral-cross','2',this.value)"></textarea>
+              <span class="refl-label">If your solution failed in the real world, which step would you revisit first?</span>
+              <textarea class="refl-textarea" id="r-oral-cross-3" placeholder="This is a diagnostic question. Your answer reveals whether you understand the root causes of success and failure in design thinking — not just the steps." oninput="reflAutoSave('oral-cross','3',this.value)"></textarea>
+              <div class="refl-save-row">
+                <button class="refl-save-btn" onclick="reflSave('oral-cross')">Save</button>
+                <span class="refl-saved-msg" id="rdot-oral-cross">Saved</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -2736,9 +2896,7 @@ function reflSave(section) {
 
 function reflRestoreAll() {
   document.querySelectorAll('#section-reflection textarea[id^="r-"]').forEach(ta => {
-    // id format: r-{section}-{field}  e.g. r-p1-1, r-d-emp-1, r-b-reg-2
-    const withoutPrefix = ta.id.slice(2); // remove 'r-'
-    // Last character is the field number, everything before the last '-' is the section
+    const withoutPrefix = ta.id.slice(2);
     const lastDash = withoutPrefix.lastIndexOf('-');
     const section = withoutPrefix.slice(0, lastDash);
     const field   = withoutPrefix.slice(lastDash + 1);
