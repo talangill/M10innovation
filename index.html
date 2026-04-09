@@ -917,73 +917,70 @@
         </div>
 
         <div class="week-tabs">
-          <button class="week-tab active has-deadline" onclick="showWeek(1,this)"><span>Week 1</span><span class="week-phase-hint">Define</span></button>
-          <button class="week-tab" onclick="showWeek(2,this)"><span>Week 2</span><span class="week-phase-hint">Ideate</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(3,this)"><span>Week 3</span><span class="week-phase-hint">Prototype</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(4,this)"><span>Week 4</span><span class="week-phase-hint">Test</span></button>
-          <button class="week-tab" onclick="showWeek(5,this)"><span>Week 5</span><span class="week-phase-hint">Iterate</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(6,this)"><span>Week 6</span><span class="week-phase-hint">Finance</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(7,this)"><span>Week 7</span><span class="week-phase-hint">Pitch prep</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(8,this)"><span>Week 8</span><span class="week-phase-hint">Assessment</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(9,this)"><span>Week 9</span><span class="week-phase-hint">Written test</span></button>
-          <button class="week-tab has-deadline" onclick="showWeek(10,this)"><span>Week 10</span><span class="week-phase-hint">Oral</span></button>
+          <button class="week-tab active has-deadline" onclick="showWeek(1,this)"><span>Week 1</span><span class="week-phase-hint">Sprint + Dragon's Den</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(2,this)"><span>Week 2</span><span class="week-phase-hint">Pitch 1 + Empathize</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(3,this)"><span>Week 3</span><span class="week-phase-hint">Pitch 2 + Define</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(4,this)"><span>Week 4</span><span class="week-phase-hint">Pitch 3 + Ideate</span></button>
+          <button class="week-tab" onclick="showWeek(5,this)"><span>Week 5</span><span class="week-phase-hint">Prototype + MVC</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(6,this)"><span>Week 6</span><span class="week-phase-hint">Pitch 4 + Test</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(7,this)"><span>Week 7</span><span class="week-phase-hint">Pitch 5 + Finalize</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(8,this)"><span>Week 8</span><span class="week-phase-hint">Theory test prep</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(9,this)"><span>Week 9</span><span class="week-phase-hint">Client pitch</span></button>
+          <button class="week-tab has-deadline" onclick="showWeek(10,this)"><span>Week 10</span><span class="week-phase-hint">Oral assessment</span></button>
         </div>
 
         <!-- WEEK 1 -->
         <div id="week-1">
-          <div class="alert warn" style="margin-bottom:16px">
+          <div class="alert info" style="margin-bottom:16px">
             <span class="alert-icon">📍</span>
-            <div><strong>Progress Pitch 1 is at the start of Week 2</strong> — the Define stage. Both M9 and M10 coaches attend. Be ready with your problem statement, reframe, sources (min. 10, 5 academic), and plan of approach.</div>
+            <div><strong>Progress Pitch 1 is at the start of Week 2.</strong> Use Week 1 to complete the sprint and gather your first insights so you're ready to pitch your define stage.</div>
           </div>
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--teal-light)">🏃</div>
-              <div class="card-header-text"><h3>Week 1 Activities</h3><p>Design Sprint + opening + first meetings</p></div>
+              <div class="card-header-text"><h3>Week 1 Activities</h3><p>Opening + 2-day Design Sprint + Dragon's Den</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend opening lecture</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend first class (mandatory)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Complete the 2-day Design &amp; Implementation Sprint</span><span class="check-tag" style="background:var(--teal-light);color:var(--teal)">Sprint</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Dragon's Den — present your sprint concept and business case to all groups</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Optional</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare paper (A4), multiple pens, and post-its — bring to every meeting</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Prep</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend opening lecture (Module Introduction)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend First Class with your BI coach — introductions and sprint briefing</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Complete the 2-day Design &amp; Implementation Sprint (days 2 &amp; 3 of week)</span><span class="check-tag" style="background:var(--teal-light);color:var(--teal)">Sprint</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Dragon's Den — present your sprint concept to other hotel groups (end of week)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Download and test Barco Clickshare App for wireless presenting</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Tech</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Empathize theory before Innovation 1 training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Innovation 1: Empathize training — plan user research, choose methods</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare paper (A4), multiple pens, and post-its — bring to every meeting</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Prep</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Select your strategic issue from the M9 analysis to work on</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Group</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Conduct initial user research and gather minimum 10 sources (5 academic)</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Begin user research — aim for minimum 10 sources (5 academic) by Pitch 1</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Draft problem statement and translate into design opportunity (reframe)</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 1</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Create plan of approach — at least the next 2 weeks should be clear</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 1</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Note all formative feedback received from coaches in writing</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Reflect</span></label>
             </div>
           </div>
         </div>
 
         <!-- WEEK 2 -->
         <div id="week-2" style="display:none">
+          <div class="alert warn" style="margin-bottom:16px">
+            <span class="alert-icon">📍</span>
+            <div><strong>Progress Pitch 1 is at the start of Week 2</strong> — the Define stage. Both M9 and M10 coaches attend. Be ready with your problem statement, reframe, sources (min. 10, 5 academic), and plan of approach.</div>
+          </div>
           <div class="alert danger" style="margin-bottom:16px">
             <span class="alert-icon">🚨</span>
             <div><strong>Leadership learning goals must be submitted this week.</strong> Late submission affects your leadership grade.</div>
           </div>
-          <div class="alert warn" style="margin-bottom:16px">
-            <span class="alert-icon">📍</span>
-            <div><strong>Progress Pitch 1 is at the start of Week 2</strong> — the Define stage. Both M9 and M10 coaches attend.</div>
-          </div>
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--purple-light)">📚</div>
-              <div class="card-header-text"><h3>Week 2 Activities</h3><p>Pitch 1 + leadership kick-off + LD dynamics + innovation training</p></div>
+              <div class="card-header-text"><h3>Week 2 Activities</h3><p>Pitch 1 · Innovation training · Regen training · Leadership training · Group Dynamics</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 1 (10–15 min) — Define stage to M9 + M10 coach</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 1 (10–15 min) — Define stage to M9 + M10 coaches</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Submit your leadership learning goals (mandatory deadline)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend LD Dynamics session</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Innovation training (week 2)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Innovation (Empathize/Define) theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training Innovation — plan user research, choose methods</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Regenerative Transition theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Regenerative Transition (Business Integration 1)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Leadership 1: Personal Leadership training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Incorporate feedback from Pitch 1 into your work</span><span class="check-tag" style="background:var(--teal-light);color:var(--teal)">Improve</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Continue research and ideation process — document everything</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare questions for upcoming expert work sessions</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Prep</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Leadership Development</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session (10.LD.EVAC)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Incorporate feedback from Pitch 1 and continue user research</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Note all formative feedback received from coaches in writing</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Reflect</span></label>
             </div>
           </div>
         </div>
@@ -997,15 +994,15 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--green-light)">🔬</div>
-              <div class="card-header-text"><h3>Week 3 Activities</h3><p>Ideate training + Pitch 2 + group dynamics</p></div>
+              <div class="card-header-text"><h3>Week 3 Activities</h3><p>Innovation training · Technology training · Work sessions · Pitch 2</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Ideate theory before Ideate training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Ideate training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Ideate theory before Innovation training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training Innovation (Ideate phase)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Technology theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Technology (Business Integration 2)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend expert work session for Innovation/Regenerative Transition (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session (10.LD.EVAC)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend LD Theory discussion session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare Pitch 2 outline: summary of Pitch 1, steps done, new insights, adapted plan</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 2</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 2 (10–15 min) to M9 + M10 coaches</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Note formative feedback and update working documents accordingly</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Reflect</span></label>
@@ -1017,22 +1014,23 @@
         <div id="week-4" style="display:none">
           <div class="alert warn" style="margin-bottom:16px">
             <span class="alert-icon">📍</span>
-            <div><strong>Progress Pitch 3 this week</strong> — focus on what still needs to be done or what you are iterating on.</div>
+            <div><strong>Progress Pitch 3 this week</strong> — focus on what still needs to be done or what you are iterating on. Both M9 + M10 coaches present.</div>
           </div>
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--amber-light)">🔁</div>
-              <div class="card-header-text"><h3>Week 4 Activities</h3><p>Prototype training + testing + iteration + Pitch 3</p></div>
+              <div class="card-header-text"><h3>Week 4 Activities</h3><p>Innovation training · Work sessions · Pitch 3 · Group Dynamics · Leadership training</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Prototype theory before Prototype training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Prototype training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology expert work session (hosted twice this week — choose your slot)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Create and conduct survey to test assumptions/solutions</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Test your prototype and document results</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Research</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Prototype theory before Innovation training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training Innovation (Prototype phase)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Leadership Development</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology work sessions — scheduled twice this week, choose your slot</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Build and test your prototype — document what you learn</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Project</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare Pitch 3 outline: what still needs to be done / what you're iterating</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 3</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 3 (10–15 min) to M9 + M10 coaches</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session directly after Pitch 3</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session (10.LD.EVAC) directly after Pitch 3</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
             </div>
           </div>
         </div>
@@ -1042,17 +1040,19 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--coral-light)">🏗</div>
-              <div class="card-header-text"><h3>Week 5 Activities</h3><p>Test training + MVC + Practice test + expert work sessions</p></div>
+              <div class="card-header-text"><h3>Week 5 Activities</h3><p>Innovation training · MVC training · Work sessions · Group Dynamics · LD Theory</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Test theory before Test training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Test training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Test phase theory before Innovation training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training Innovation (Test phase)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Multiple Value Creation (MVC) theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Multiple Value Creation (Business Integration 3)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Practice Test (mandatory) — bring valid ID and your own laptop</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session (10.LD.EVAC)</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend LD Theory discussion session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Schedule one of your 3 expert consultation sessions (30 min, group only)</span><span class="check-tag" style="background:var(--teal-light);color:var(--teal)">Expert</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend expert work sessions for MVC (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Continue refining concept, implementation plan, and financial projections</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Project</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Continue testing your prototype and documenting results</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Project</span></label>
             </div>
           </div>
         </div>
@@ -1066,19 +1066,20 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--green-light)">💰</div>
-              <div class="card-header-text"><h3>Week 6 Activities</h3><p>Marketing + LD training + Change management + Pitch 4</p></div>
+              <div class="card-header-text"><h3>Week 6 Activities</h3><p>Change Management training · Marketing training · Leadership training · Work sessions · Pitch 4</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Marketing theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Marketing (Business Integration 4)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training LD (Leadership Development)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Change Management theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Change Management (Business Integration 5)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend expert work session for Change Management (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare Pitch 4: concept, implementation plan with finance &amp; change management emphasis</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 4</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Study Marketing theory before training</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Marketing (Business Integration 4)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Training: Leadership Development</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Training</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend MVC work sessions (scheduled twice this week — choose your slot)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare Pitch 4: concept + implementation plan with finance &amp; change management emphasis</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 4</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare financial projections (3-year forecast) and change management plan</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 4</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 4 (10–15 min) to M9 + M10 coaches</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session directly after Pitch 4</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Note feedback and incorporate into your work</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Reflect</span></label>
             </div>
           </div>
@@ -1093,15 +1094,19 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--accent-light)">📣</div>
-              <div class="card-header-text"><h3>Week 7 Activities</h3><p>Final pitch + pitch practice + video recording</p></div>
+              <div class="card-header-text"><h3>Week 7 Activities</h3><p>Multiple work sessions · LD Theory · Pitch 5 · Group Dynamics · Finalize business case</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend work session for Leadership (with your coach)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Change Management work sessions (scheduled 3× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Marketing work sessions (scheduled 3× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend MVC work sessions (scheduled 2× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend LD Theory discussion session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare Pitch 5: full concept + implementation with finance &amp; marketing emphasis</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 5</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare marketing campaign and KPIs aligned with original objectives</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">⚡ Pitch 5</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Deliver Progress Pitch 5 (10–15 min) to M9 + M10 coaches</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session directly after Pitch 5</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Pitch Practice session for client presentation</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Practice</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Group Dynamics session (10.LD.EVAC) directly after Pitch 5</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Record Leadership video: you as coach (max 15 min coaching conversation)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Leadership</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Record Leadership video: you as coachee — reflect on personal leadership + group dynamics</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Leadership</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Finalize business case (max 4,000 words) — check word count carefully</span><span class="check-tag" style="background:var(--green-light);color:var(--green)">Project</span></label>
@@ -1112,44 +1117,50 @@
 
         <!-- WEEK 8 -->
         <div id="week-8" style="display:none">
-          <div class="alert danger" style="margin-bottom:16px">
-            <span class="alert-icon">🎯</span>
-            <div><strong>Assessment week.</strong> Business Case submission and Client Presentation fall in Week 8. Attendance at the client presentation is mandatory — no exceptions without study counsellor approval.</div>
+          <div class="alert info" style="margin-bottom:16px">
+            <span class="alert-icon">📝</span>
+            <div><strong>Theory exam practice this week.</strong> Final work sessions for all Business Integration topics are also available — use them. Business case must be submitted this week.</div>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-icon" style="background:var(--red-light)">🏆</div>
-              <div class="card-header-text"><h3>Week 8 — Business Case &amp; Client Presentation</h3><p>Business case submission · Client presentation · Leadership deliverables</p></div>
+              <div class="card-icon" style="background:var(--amber-light)">🧠</div>
+              <div class="card-header-text"><h3>Week 8 Activities</h3><p>Work sessions · Theory exam practice · Business case submission</p></div>
             </div>
             <div class="checklist">
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Regenerative Transition work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Technology work session (if scheduled)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Change Management work sessions (scheduled 3× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Marketing work sessions (scheduled 3× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend MVC work sessions (scheduled 2× this week)</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Work Session</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Theory Exam Practice (mandatory) — bring valid ID and your own laptop</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Submit final Business Case (group deliverable, max 4,000 words)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare back-up slides for expected questions (finance, research, prototypes)</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Practice timing — client pitch is exactly 5 minutes, Q&amp;A is 5 min extra</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Wear business attire / smart casual for client presentation</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend and participate in Client Presentation (MANDATORY — unjustified absence = insufficient)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">All team members line up to answer questions after the 5-min pitch</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Submit Leadership videos (coach video + coachee video, max 15 min each)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Complete Leadership Oral Assessment with your leadership coach</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Begin restudying all learning materials for the written test (Week 9)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
             </div>
           </div>
         </div>
 
         <!-- WEEK 9 -->
         <div id="week-9" style="display:none">
-          <div class="alert info" style="margin-bottom:16px">
-            <span class="alert-icon">📝</span>
-            <div><strong>Written Test this week</strong> — 45 multiple choice questions covering Design Thinking and Business Integration. Also prepare for your client pitch and oral assessment.</div>
+          <div class="alert danger" style="margin-bottom:16px">
+            <span class="alert-icon">🎯</span>
+            <div><strong>Client presentation this week.</strong> Attendance is mandatory — unjustified absence automatically results in an Insufficient for Individual Contribution, regardless of everything else.</div>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-icon" style="background:var(--amber-light)">📚</div>
-              <div class="card-header-text"><h3>Week 9 Activities</h3><p>Written test prep + client pitch preparation + oral preparation</p></div>
+              <div class="card-icon" style="background:var(--accent-light)">🎤</div>
+              <div class="card-header-text"><h3>Week 9 Activities</h3><p>Pitch practice · Client presentation · Written test · Oral preparation</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Restudy all necessary learning materials for the written test</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare your client pitch for the practice and real pitch</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend the client presentation</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare your oral assessment</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Pitch Practice session — get feedback before the real thing</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Practice</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare back-up slides for expected questions (finance, research, prototypes)</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Practice timing — client pitch is exactly 5 minutes, Q&amp;A is 5 min extra</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Wear business attire / smart casual for client presentation</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Client Pres</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend and participate in Client Presentation (MANDATORY — unjustified absence = insufficient)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Sit the Written Test (45 MC questions — Design Thinking + Business Integration)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Restudy all learning materials for the written test — all 5 DT phases + 5 BI domains</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Bring valid ID and your own laptop to the written test</span><span class="check-tag" style="background:var(--bg);color:var(--muted)">Prep</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Prepare your oral assessment using the oral prep reflection in this tracker</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
             </div>
           </div>
         </div>
@@ -1158,16 +1169,19 @@
         <div id="week-10" style="display:none">
           <div class="alert danger" style="margin-bottom:16px">
             <span class="alert-icon">🎯</span>
-            <div><strong>Final assessment week.</strong> Oral assessment takes place this week. Review the rubric carefully and make sure you are prepared for all six criteria.</div>
+            <div><strong>Oral assessment week.</strong> Individual oral exam and LD video assessment both take place this week. Review the oral rubric carefully and use the Oral Prep tab in the Reflection Journal.</div>
           </div>
           <div class="card">
             <div class="card-header">
               <div class="card-icon" style="background:var(--red-light)">🏁</div>
-              <div class="card-header-text"><h3>Week 10 Activities</h3><p>Oral assessment preparation + final submission</p></div>
+              <div class="card-header-text"><h3>Week 10 — Final Assessments</h3><p>Individual oral exam · LD video assessment · Leadership oral</p></div>
             </div>
             <div class="checklist">
-              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Ensure to restudy the oral rubric and the assessment information</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Restudy the oral rubric and all assessment information thoroughly</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Complete oral prep reflections (all 6 phases + cross-cutting questions)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Theory</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attend Individual Oral Assessment (all 5 Design Thinking phases + Integration)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Submit LD video assessment (coach video + coachee video, max 15 min each)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
+              <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Complete Leadership Oral Assessment with your leadership coach</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Assessment</span></label>
               <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Confirm Open Day participation has been fulfilled</span><span class="check-tag" style="background:var(--accent-light);color:var(--accent)">Mandatory</span></label>
             </div>
           </div>
@@ -1762,7 +1776,7 @@
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Recorded Video 1: You as COACH — demonstrating coaching capacity (max 15 min)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Video</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Recorded Video 2: You as COACHEE — reflecting on personal leadership + group dynamics (max 15 min)</span><span class="check-tag" style="background:var(--purple-light);color:var(--purple)">Video</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Submitted both videos to leadership coach</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></label>
-            <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Completed Leadership Oral Assessment (Week 8)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Week 8</span></label>
+            <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Completed Leadership Oral Assessment (Week 10)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Week 10</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Participated in HMSM Open Day (M9 or M10) and informed module coordinator</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
           </div>
         </div>
@@ -1960,7 +1974,7 @@
             <div class="card-icon" style="background:var(--accent-light)">🎤</div>
             <div class="card-header-text">
               <h3>Client Presentation (Group + Individual)</h3>
-              <p>5 min pitch + 5 min Q&A · Week 8 · Smart casual / business attire</p>
+              <p>5 min pitch + 5 min Q&amp;A · Week 9 · Smart casual / business attire</p>
             </div>
           </div>
           <div class="outline-block">
@@ -1991,7 +2005,7 @@
             <div class="card-icon" style="background:var(--purple-light)">🗣</div>
             <div class="card-header-text">
               <h3>Individual Oral Assessment</h3>
-              <p>Week 8 · 6 criteria · Averaged score</p>
+              <p>Week 10 · 6 criteria · Averaged score</p>
             </div>
           </div>
           <div class="checklist">
@@ -2013,7 +2027,7 @@
             </div>
           </div>
           <div class="checklist">
-            <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attended mandatory Practice Test (confirmed device works)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
+            <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Attended Theory Exam Practice session in Week 8 (confirmed device works)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Studied all 5 Design Thinking phases (5 Q's each = 25 Q's total)</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Studied all 5 Business Integration domains (4 Q's each = 20 Q's total)</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Bring valid ID (student card, ID card, passport, or driving licence)</span></label>
