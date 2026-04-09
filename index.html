@@ -1978,16 +1978,66 @@
             </div>
           </div>
           <div class="outline-block">
-            <h4>5-minute pitch structure</h4>
-            <ol>
-              <li>Opening hook (~30 sec) — compelling question, quote, or statistic</li>
-              <li>Context & opportunity (~1 min) — strategic problem, key stakeholders</li>
-              <li>The concept (~2 min) — what it is, why best, research support, key visuals</li>
-              <li>Implementation plan (~1 min) — changes, who's involved, timeline / Service Blueprint</li>
-              <li>Costs & benefits (~1 min) — environmental, social, financial impacts + 3-year forecast</li>
-              <li>Risks & success measurement (~1 min) — KPIs, mitigation strategies</li>
-            </ol>
+            <h4>5-minute pitch structure — choose your style</h4>
+
+            <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+              <button onclick="showPitchStyle('problem',this)" id="ps-btn-problem" style="padding:5px 14px;border-radius:8px;border:1.5px solid var(--accent);background:var(--accent);color:white;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.15s">Problem–Solution</button>
+              <button onclick="showPitchStyle('story',this)" id="ps-btn-story" style="padding:5px 14px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;transition:all 0.15s">Story Arc</button>
+              <button onclick="showPitchStyle('insight',this)" id="ps-btn-insight" style="padding:5px 14px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;transition:all 0.15s">Insight-Led</button>
+            </div>
+
+            <!-- Problem–Solution -->
+            <div id="ps-problem">
+              <p style="font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic">Classic consulting structure. Lead with the problem, land with the answer. Works well when the client already feels the pain.</p>
+              <ol style="font-size:13px;line-height:1.8;padding-left:18px">
+                <li><strong>Hook</strong> <span style="color:var(--muted)">(30 sec)</span> — one sharp question or fact that makes the problem undeniable</li>
+                <li><strong>The problem</strong> <span style="color:var(--muted)">(45 sec)</span> — strategic issue, who it affects, why now</li>
+                <li><strong>Your concept</strong> <span style="color:var(--muted)">(90 sec)</span> — what it is, why it's the right answer, one key visual</li>
+                <li><strong>How it works</strong> <span style="color:var(--muted)">(45 sec)</span> — implementation in brief: who, what changes, Service Blueprint</li>
+                <li><strong>The value</strong> <span style="color:var(--muted)">(30 sec)</span> — environmental, social, financial impact + 3-year headline figure</li>
+              </ol>
+              <p style="font-size:11px;color:var(--muted);margin-top:8px">Total: 30+45+90+45+30 = <strong>4 min</strong> + 60 sec buffer for transitions &amp; breathing room ✓</p>
+            </div>
+
+            <!-- Story Arc -->
+            <div id="ps-story" style="display:none">
+              <p style="font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic">Narrative structure. Take the client on a journey from pain to transformation. Works well when you want to create emotional buy-in.</p>
+              <ol style="font-size:13px;line-height:1.8;padding-left:18px">
+                <li><strong>Open in the world</strong> <span style="color:var(--muted)">(30 sec)</span> — paint the current situation through a real user or moment</li>
+                <li><strong>The tension</strong> <span style="color:var(--muted)">(45 sec)</span> — what's broken, at stake, or being lost</li>
+                <li><strong>The turn</strong> <span style="color:var(--muted)">(90 sec)</span> — your concept as the solution, backed by research</li>
+                <li><strong>The new world</strong> <span style="color:var(--muted)">(45 sec)</span> — what the hotel looks like after: guests, staff, financials</li>
+                <li><strong>The ask</strong> <span style="color:var(--muted)">(30 sec)</span> — what you're recommending the client does next</li>
+              </ol>
+              <p style="font-size:11px;color:var(--muted);margin-top:8px">Total: 30+45+90+45+30 = <strong>4 min</strong> + 60 sec buffer for transitions &amp; breathing room ✓</p>
+            </div>
+
+            <!-- Insight-Led -->
+            <div id="ps-insight" style="display:none">
+              <p style="font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic">Research-forward structure. Lead with what you discovered, then show where it led you. Works well when your empathize phase surfaced something surprising.</p>
+              <ol style="font-size:13px;line-height:1.8;padding-left:18px">
+                <li><strong>The insight</strong> <span style="color:var(--muted)">(45 sec)</span> — one unexpected finding from your research that reframes the challenge</li>
+                <li><strong>Why it matters</strong> <span style="color:var(--muted)">(30 sec)</span> — the strategic implication for this hotel, right now</li>
+                <li><strong>The concept</strong> <span style="color:var(--muted)">(90 sec)</span> — what you designed in response, and why this solution follows logically</li>
+                <li><strong>Proof it works</strong> <span style="color:var(--muted)">(45 sec)</span> — prototype testing results + financial headline</li>
+                <li><strong>Next steps</strong> <span style="color:var(--muted)">(30 sec)</span> — implementation roadmap and first action</li>
+              </ol>
+              <p style="font-size:11px;color:var(--muted);margin-top:8px">Total: 45+30+90+45+30 = <strong>4 min</strong> + 60 sec buffer for transitions &amp; breathing room ✓</p>
+            </div>
           </div>
+          <script>
+          function showPitchStyle(style, btn) {
+            ['problem','story','insight'].forEach(s => {
+              document.getElementById('ps-' + s).style.display = s === style ? 'block' : 'none';
+              var b = document.getElementById('ps-btn-' + s);
+              if (s === style) {
+                b.style.background = 'var(--accent)'; b.style.color = 'white'; b.style.borderColor = 'var(--accent)';
+              } else {
+                b.style.background = 'var(--bg)'; b.style.color = 'var(--muted)'; b.style.borderColor = 'var(--border)';
+              }
+            });
+          }
+          </script>
           <div class="checklist">
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Presentation timed — exactly 5 minutes</span></label>
             <label class="check-item" onclick="toggle(this)"><div class="checkmark"></div><span class="check-text">Barco Clickshare tested and working</span></label>
@@ -2439,6 +2489,8 @@
               </div>
             </div>
           </div>
+        </div>
+
         <div class="refl-stab" id="refl-oral">
           <div class="refl-intro-banner">
             <h3>Oral assessment preparation</h3>
