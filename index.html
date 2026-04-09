@@ -664,21 +664,21 @@
   .refl-tab { padding: 8px 18px; border-radius: 10px; font-size: 13px; cursor: pointer; border: 1.5px solid transparent; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: all 0.18s; }
   .refl-tab:hover { transform: translateY(-1px); }
 
-  .refl-tab[onclick*="pitches"] { background: var(--teal-light); color: var(--teal); border-color: rgba(26,107,122,0.2); }
-  .refl-tab[onclick*="pitches"]:hover { background: #ceeef3; border-color: var(--teal); }
-  .refl-tab[onclick*="pitches"].active { background: var(--teal); color: white; border-color: var(--teal); box-shadow: 0 3px 10px rgba(26,107,122,0.3); }
+  .refl-tab[data-tab="pitches"] { background: var(--teal-light); color: var(--teal); border-color: rgba(26,107,122,0.2); }
+  .refl-tab[data-tab="pitches"]:hover { background: #ceeef3; border-color: var(--teal); }
+  .refl-tab[data-tab="pitches"].active { background: var(--teal); color: white; border-color: var(--teal); box-shadow: 0 3px 10px rgba(26,107,122,0.3); }
 
-  .refl-tab[onclick*="design"] { background: var(--purple-light); color: var(--purple); border-color: rgba(107,63,160,0.2); }
-  .refl-tab[onclick*="design"]:hover { background: #e5d9f7; border-color: var(--purple); }
-  .refl-tab[onclick*="design"].active { background: var(--purple); color: white; border-color: var(--purple); box-shadow: 0 3px 10px rgba(107,63,160,0.3); }
+  .refl-tab[data-tab="design"] { background: var(--purple-light); color: var(--purple); border-color: rgba(107,63,160,0.2); }
+  .refl-tab[data-tab="design"]:hover { background: #e5d9f7; border-color: var(--purple); }
+  .refl-tab[data-tab="design"].active { background: var(--purple); color: white; border-color: var(--purple); box-shadow: 0 3px 10px rgba(107,63,160,0.3); }
 
-  .refl-tab[onclick*="business"] { background: var(--amber-light); color: var(--amber); border-color: rgba(196,122,10,0.2); }
-  .refl-tab[onclick*="business"]:hover { background: #fce8b2; border-color: var(--amber); }
-  .refl-tab[onclick*="business"].active { background: var(--amber); color: white; border-color: var(--amber); box-shadow: 0 3px 10px rgba(196,122,10,0.3); }
+  .refl-tab[data-tab="business"] { background: var(--amber-light); color: var(--amber); border-color: rgba(196,122,10,0.2); }
+  .refl-tab[data-tab="business"]:hover { background: #fce8b2; border-color: var(--amber); }
+  .refl-tab[data-tab="business"].active { background: var(--amber); color: white; border-color: var(--amber); box-shadow: 0 3px 10px rgba(196,122,10,0.3); }
 
-  .refl-tab[onclick*="oral"] { background: var(--green-light); color: var(--green); border-color: rgba(29,122,78,0.2); }
-  .refl-tab[onclick*="oral"]:hover { background: #c8ead8; border-color: var(--green); }
-  .refl-tab[onclick*="oral"].active { background: var(--green); color: white; border-color: var(--green); box-shadow: 0 3px 10px rgba(29,122,78,0.3); }
+  .refl-tab[data-tab="oral"] { background: var(--green-light); color: var(--green); border-color: rgba(29,122,78,0.2); }
+  .refl-tab[data-tab="oral"]:hover { background: #c8ead8; border-color: var(--green); }
+  .refl-tab[data-tab="oral"].active { background: var(--green); color: white; border-color: var(--green); box-shadow: 0 3px 10px rgba(29,122,78,0.3); }
   .refl-stab { display: none; }
   .refl-stab.active { display: block; }
   .refl-card { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 16px; overflow: hidden; }
@@ -2137,10 +2137,10 @@
         </div>
 
         <div class="refl-tabs">
-          <button class="refl-tab active" onclick="reflShow('pitches',this)">After each pitch</button>
-          <button class="refl-tab" onclick="reflShow('design',this)">Design thinking</button>
-          <button class="refl-tab" onclick="reflShow('business',this)">Business integration</button>
-          <button class="refl-tab" onclick="reflShow('oral',this)">Oral prep</button>
+          <button class="refl-tab active" data-tab="pitches" onclick="reflShow('pitches',this)">After each pitch</button>
+          <button class="refl-tab" data-tab="design" onclick="reflShow('design',this)">Design thinking</button>
+          <button class="refl-tab" data-tab="business" onclick="reflShow('business',this)">Business integration</button>
+          <button class="refl-tab" data-tab="oral" onclick="reflShow('oral',this)">Oral prep</button>
         </div>
 
         <!-- PITCH REFLECTIONS -->
