@@ -1956,9 +1956,10 @@
       <div class="content">
         <div class="section-hero">
           <h2>Deliverables</h2>
-          <p>Everything that needs to be submitted, presented, or sat. Check off as you go.</p>
+          <p>Everything that needs to be submitted, presented, or sat — with full assessment criteria and template guidance.</p>
         </div>
 
+        <!-- ── BUSINESS CASE ── -->
         <div class="card">
           <div class="card-header">
             <div class="card-icon" style="background:var(--green-light)">📄</div>
@@ -1966,14 +1967,154 @@
               <h3>Business Case (Group)</h3>
               <p>Max 4,000 words · Graded by both hotel coaches · Week 8</p>
             </div>
+            <span class="card-header-badge" style="background:var(--green-light);color:var(--green)">Group</span>
+          </div>
+
+          <!-- Assessment -->
+          <div style="padding:18px 24px 4px">
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Assessment</p>
+            <p style="font-size:13px;color:var(--text);line-height:1.7;margin-bottom:14px">The score on the business case is provided by both hotel coaches. The grade is provided as either highly insufficient (HI&nbsp;=&nbsp;2), insufficient (INS&nbsp;=&nbsp;4), sufficient (SUF&nbsp;=&nbsp;6), good (GOO&nbsp;=&nbsp;8) or excellent (EXC&nbsp;=&nbsp;10). Grades are delivered to module coordinator to ensure independence. When the coordinator indicates different grading, short consultation follows to reach agreement.</p>
+            <div class="alert danger" style="margin-bottom:16px">
+              <span class="alert-icon">⛔</span>
+              <div>In case the assessment provides a highly insufficient score (HI&nbsp;=&nbsp;2), oral assessment is not permitted and a resit of the business case and the oral applies.</div>
+            </div>
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Criterion — Module Learning Outcome</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;font-style:italic">"The student, in a group, is capable of creating and communicating a feasible, strategic, regenerative, and innovative concept to a client using a structured design approach based on relevant (business) models and theories."</p>
+
+            <!-- Grade rubric -->
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px">
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--green-light);border-radius:8px;border-left:3px solid var(--green)">
+                <span class="grade-pill g-exc" style="flex-shrink:0;margin-top:1px">EXC 10</span>
+                <p style="font-size:13px;line-height:1.6;color:#0d4a2e">The business case demonstrates a feasible, strategic, regenerative, and innovative concept to a client using a structured design approach based on relevant (business) models and theories. The guidelines are fully met and every aspect is logically connected, explained, and presented for a client to understand.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--accent-light);border-radius:8px;border-left:3px solid var(--accent)">
+                <span class="grade-pill g-goo" style="flex-shrink:0;margin-top:1px">GOO 8</span>
+                <p style="font-size:13px;line-height:1.6;color:#1a3a9e">The business case demonstrates a largely feasible, strategic, regenerative, and innovative concept to a client using a structured design approach based on relevant (business) models and theories. The guidelines are mostly met, the concept is clear and offers, to a large extent, value for the client.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--amber-light);border-radius:8px;border-left:3px solid var(--amber)">
+                <span class="grade-pill g-suf" style="flex-shrink:0;margin-top:1px">SUF 6</span>
+                <p style="font-size:13px;line-height:1.6;color:#7a4c00">The business case demonstrates a somewhat feasible, strategic, regenerative, and innovative concept to a client using a structured design approach based on relevant (business) models and theories. The guidelines are not always met, but the concept can be understood and offers, to a certain extent, value for the client.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--red-light);border-radius:8px;border-left:3px solid var(--red)">
+                <span class="grade-pill g-ins" style="flex-shrink:0;margin-top:1px">INS 4</span>
+                <p style="font-size:13px;line-height:1.6;color:#8a1a0e">The business case is hard to understand, or flawed to such an extent that value is not clear, not present, or hard to believe. In addition, one or more chapters are missing, referencing is absent, multiple value creation is absent, the marketing campaign is absent, or information is not substantiated by both primary and secondary research.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:#f5e0e0;border-radius:8px;border-left:3px solid #a00">
+                <span class="grade-pill g-hi" style="flex-shrink:0;margin-top:1px">HI 2</span>
+                <p style="font-size:13px;line-height:1.6;color:#6b0f0f">The business case is not handed in, or the business case is (almost) impossible to assess due to a high number of flaws in the essentials mentioned in the template.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template accordion -->
+          <div style="border-top:1px solid var(--border)">
+            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(90deg)':'rotate(0deg)'" style="width:100%;display:flex;align-items:center;gap:10px;padding:14px 24px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--text);text-align:left">
+              <span style="font-size:15px">📋</span> Business Case Template — Chapter Guide
+              <span class="acc-arrow" style="margin-left:auto;font-size:12px;color:var(--muted);transition:transform 0.2s">▶</span>
+            </button>
+            <div style="display:none;padding:0 24px 20px">
+
+              <div class="alert warn" style="margin-bottom:16px">
+                <span class="alert-icon">📌</span>
+                <div><strong>Essentials (always check these first)</strong><br>
+                Word limit = 4,000 words (title page, index, references &amp; appendices are NOT included). <strong>Every 3% additional excess leads to a 0.1 deduction on the final grade.</strong> Give the report a relevant, original name. Ensure professional layout (page numbers, tables, illustrations, references). Include visuals wherever they aid your case — visuals do not count as words. Ensure source references are in APA. All claims, statements, and arguments must be backed up by relevant research (primary or secondary).</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <!-- Ch 1 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">1</span> Executive Summary
+                    <span style="margin-left:auto;font-size:11px;color:var(--muted)">Write last ↓</span>
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Provide a brief overview of the entire business case: current situation &amp; context · problem or opportunity · objective of the proposal · proposed solution · costs and benefits · why this is relevant for the organisation.<br>
+                    <em style="color:var(--accent)">💡 Tip: Write this last — once all other parts are worked out.</em>
+                  </div>
+                </div>
+                <!-- Ch 2 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">2</span> Recommended Solution <span style="font-size:11px;color:var(--muted);margin-left:4px">— the WHAT</span>
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Brief overview of the recommended solution · substantiation of why it is suitable · support by primary research findings (qualitative &amp; quantitative) · a clear visualisation of the favoured solution · Value Proposition Canvas.<br>
+                    <em style="color:var(--accent)">💡 Tip: Emphasise the why of your choice from all possible alternatives. A model like MoSCoW can help show prioritisation.</em>
+                  </div>
+                </div>
+                <!-- Ch 3 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">3</span> Background, Opportunity &amp; Objectives <span style="font-size:11px;color:var(--muted);margin-left:4px">— the WHY</span>
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Current situation within the hotel/organisation · signs that something needs to change (customer satisfaction, efficiency, competition) · specific problem or challenge · reframed opportunity that unlocks improvement · stakeholders (guests, staff, management, suppliers, local community, natural environment) — include a relevant visual such as a persona · SMART objectives with a main goal and sub-goals.<br>
+                    <em style="color:var(--accent)">📌 Note: Base on facts, figures, and/or conversations. Use at least <strong>12 relevant sources, including at least 6 academic sources</strong>.</em>
+                  </div>
+                </div>
+                <!-- Ch 4 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">4</span> Organisational Consequences &amp; Implementation <span style="font-size:11px;color:var(--muted);margin-left:4px">— the HOW</span>
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Changes across all levels (HR, culture, physical) · organisational consequences for: processes, personnel, information systems, stakeholders/partners, accommodation redesign, change management · step-by-step implementation plan (pilot, training, rollout) · timeline visual (Gantt chart or milestone table) · who is involved (internal &amp; external) · key assumptions without full proof yet · future research still needed · supporting visuals (Service Blueprint, Marketing Mix, Customer Journey Map).<br>
+                    <em style="color:var(--accent)">💡 Tip: Be honest. The client is best served by an honest reflection on what does and does not work.</em>
+                  </div>
+                </div>
+                <!-- Ch 5 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">5</span> Risk Analysis
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Risks and mitigation strategies (staff resistance, technical errors, etc.) · cover all risk types: internal, external, and more. Use visuals to avoid excessive word use while still providing necessary detail — this should be a full-fledged plan, not wishful thinking.
+                  </div>
+                </div>
+                <!-- Ch 6 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">6</span> Costs &amp; Benefits
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Follow ESF order — <strong>Environment first, then Social, then Financial</strong> · Environment: sustainability, circularity, regeneration · Social: employment, community, inclusivity · Financial: long-term value and financial sustainability · estimated investments (one-time &amp; annual) · operational costs · expected benefits (revenue, time savings, loyalty, social systems, environmental risk) · business opportunities linked to nature, climate, and people · apply where relevant: Discounted Cash Flow (DCF), Payback Period, ROI with a realistic 3-year forecast and impact visualisation.<br>
+                    <em style="color:var(--accent)">📌 Note: Explain, benchmark, and substantiate all assumptions — e.g., based on industry data or interviews.</em>
+                  </div>
+                </div>
+                <!-- Ch 7 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">7</span> Evaluation &amp; Success Measurement
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    KPIs used (NPS, revenue per room, occupancy rate, Google reviews, etc.) · measurement timing (e.g., after 3 and 6 months) · who evaluates, how feedback is used, and when success is declared · Governance: which person or team is responsible and accountable for achieving targets (including regenerative actions).<br>
+                    <em style="color:var(--accent)">💡 Tip: Make sure evaluation aligns with your objectives from Chapter 3. Use visuals to demonstrate this.</em>
+                  </div>
+                </div>
+                <!-- Ch 8 -->
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">8</span> Appendices
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Supporting information for those who want to know more. May include: financial substantiation · findings/insights from primary research · market or customer research · tables or diagrams · technical specifications · extensive Gantt chart or planning tool.
+                  </div>
+                </div>
+              </div><!-- end chapter list -->
+            </div>
+          </div><!-- end accordion -->
+
+          <!-- Checklist -->
+          <div style="border-top:1px solid var(--border)">
+            <p style="padding:12px 24px 4px;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted)">Submission checklist</p>
           </div>
           <div class="checklist">
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Concept is feasible, strategic, regenerative, and innovative</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">All required chapters are present (none missing)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Multiple value creation is explicitly addressed</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Marketing campaign is included</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">All information substantiated by both primary AND secondary research</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Referencing is complete and correctly formatted</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">All 7 required chapters present (none missing)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Multiple value creation explicitly addressed (ESF: Environment → Social → Financial)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Marketing campaign included</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">All claims substantiated by both primary AND secondary research (≥12 sources, ≥6 academic)</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Referencing complete and APA formatted</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Word count checked — under 4,000 words (each 3% excess = −0.1 from oral score)</span><span class="check-tag" style="background:var(--amber-light);color:var(--amber)">Word count</span></div>
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Structured design approach using relevant business models and theories</span></div>
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Document submitted on time</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></div>
@@ -2061,13 +2202,314 @@
           </div>
         </div>
 
+        <!-- ── INDIVIDUAL CONTRIBUTION ── -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon" style="background:var(--teal-light)">🙋</div>
+            <div class="card-header-text">
+              <h3>Individual Contribution</h3>
+              <p>Teacher logbook + individual reflection · Graded by your own coach</p>
+            </div>
+            <span class="card-header-badge" style="background:var(--teal-light);color:var(--teal)">Individual</span>
+          </div>
+
+          <!-- Assessment text verbatim -->
+          <div style="padding:18px 24px 4px">
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Assessment</p>
+            <p style="font-size:13px;color:var(--text);line-height:1.7;margin-bottom:12px">The score on your individual contribution is provided by your own coach based on the teacher logbook, and your individual reflection. The grade is provided as either insufficient (INS&nbsp;=&nbsp;4), sufficient (SUF&nbsp;=&nbsp;6), good (GOO&nbsp;=&nbsp;8) or excellent (EXC&nbsp;=&nbsp;10).</p>
+            <div class="alert danger" style="margin-bottom:12px">
+              <span class="alert-icon">⛔</span>
+              <div>Your presence and participation in the client presentation is mandatory. Only when indicated by the study counsellor, exceptions can be made. Unjustified absence will be marked as mentioned below.</div>
+            </div>
+            <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px"><strong style="color:var(--text)">Criterion:</strong> The teacher logbook illustrates proof of decent participation, based on presence and participation during coach sessions and the client presentation. The student reflection illustrates a deep and honest reflection on the learning process and the individual contribution.</p>
+
+            <!-- Grade rubric -->
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px">
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--green-light);border-radius:8px;border-left:3px solid var(--green)">
+                <span class="grade-pill g-exc" style="flex-shrink:0;margin-top:1px">EXC 10</span>
+                <p style="font-size:13px;line-height:1.6;color:#0d4a2e">Student was always present, participated well and displayed an excellent reflection. Student was present and participated at the client presentation.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--accent-light);border-radius:8px;border-left:3px solid var(--accent)">
+                <span class="grade-pill g-goo" style="flex-shrink:0;margin-top:1px">GOO 8</span>
+                <p style="font-size:13px;line-height:1.6;color:#1a3a9e">Student was (almost) always present, participated well and displayed a good reflection. Student was present and participated at the client presentation.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--amber-light);border-radius:8px;border-left:3px solid var(--amber)">
+                <span class="grade-pill g-suf" style="flex-shrink:0;margin-top:1px">SUF 6</span>
+                <p style="font-size:13px;line-height:1.6;color:#7a4c00">Student was mostly present, participated sufficiently, and displayed a sufficient reflection. Student was present and participated at the client presentation.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--red-light);border-radius:8px;border-left:3px solid var(--red)">
+                <span class="grade-pill g-ins" style="flex-shrink:0;margin-top:1px">INS 4</span>
+                <p style="font-size:13px;line-height:1.6;color:#8a1a0e">Student was (often) not present or (mostly) did not participate, or failed to provide a sufficient reflection, or was not present (unjustified) at the client presentation, or did not participate.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- One-pager template accordion -->
+          <div style="border-top:1px solid var(--border)">
+            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow2').style.transform=this.nextElementSibling.style.display==='block'?'rotate(90deg)':'rotate(0deg)'" style="width:100%;display:flex;align-items:center;gap:10px;padding:14px 24px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--text);text-align:left">
+              <span style="font-size:15px">📝</span> Individual Reflection One-Pager — Template Guide
+              <span class="acc-arrow2" style="margin-left:auto;font-size:12px;color:var(--muted);transition:transform 0.2s">▶</span>
+            </button>
+            <div style="display:none;padding:0 24px 20px">
+              <div class="alert info" style="margin-bottom:14px">
+                <span class="alert-icon">📌</span>
+                <div><strong>Format:</strong> Maximum 1 A4 page <u>and</u> maximum 500 words · Tone: professional, reflective, and constructive. <strong>Golden rule:</strong> focus tightly on your individual role and reflection — not on describing the group project.</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--teal);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">1</span> Introduction <span style="color:var(--muted);font-size:12px;margin-left:4px">2–3 sentences</span>
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Briefly state the project context (hospitality/business improvement focus) · Define your role within the group.
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--teal);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">2</span> Individual Contribution
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Describe the content-related tasks you specifically worked on (e.g., research, idea generation, prototyping, guest journey mapping, financial/operational input) · Highlight skills or knowledge you applied (hospitality insights, analytical thinking, creativity, etc.).
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--teal);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">3</span> Critical Reflection
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    Evaluate your contribution: what went well, what could have been improved? · Show awareness of challenges (time, communication, decision-making, balancing creativity with feasibility) · Be honest but constructive.<br>
+                    <em style="color:var(--teal)">Assessment asks: Do you critically assess your own contribution — not just describe it?</em>
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    <span style="background:var(--teal);color:white;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;flex-shrink:0">4</span> Learning &amp; Future Orientation
+                  </button>
+                  <div style="display:none;padding:12px 16px;font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid var(--border)">
+                    What did you learn about design thinking and business improvement in a hospitality context? · How will this learning influence your future studies, internships, or career? · How would you approach similar projects differently in the future?<br>
+                    <em style="color:var(--teal)">Assessment asks: Do you show what you will take forward — constructive, forward-looking?</em>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size:12px;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--bg);border-radius:8px">📋 <strong>Self-check:</strong> Is your reflection structured, focused, and within one page? Are your points clearly linked to the hospitality context and the group's innovative concept?</p>
+            </div>
+          </div>
+
+          <!-- Checklist -->
+          <div style="border-top:1px solid var(--border)">
+            <p style="padding:12px 24px 4px;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted)">Checklist</p>
+          </div>
+          <div class="checklist">
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Present and active during all coach sessions (teacher logbook)</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Present and participated at the client presentation</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Mandatory</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">One-pager written: max 1 A4 page and max 500 words</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">All 4 sections covered: intro, contribution, critical reflection, future orientation</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Reflection is honest, critical, and constructive — not just a description</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">One-pager submitted on time</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Deadline</span></div>
+          </div>
+        </div>
+
         <div class="card">
           <div class="card-header">
             <div class="card-icon" style="background:var(--purple-light)">🗣</div>
             <div class="card-header-text">
               <h3>Individual Oral Assessment</h3>
-              <p>Week 10 · 6 criteria · Averaged score</p>
+              <p>Week 10 · 30 min · 6 criteria averaged · No tech allowed</p>
             </div>
+            <span class="card-header-badge" style="background:var(--purple-light);color:var(--purple)">Individual</span>
+          </div>
+
+          <!-- Logistics -->
+          <div style="padding:18px 24px 6px">
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Logistics</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+              <div style="background:var(--bg);border-radius:8px;padding:12px 14px">
+                <p style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Duration</p>
+                <p style="font-size:13px;color:var(--text)">30 min oral + assessment time within 40 min total slot</p>
+              </div>
+              <div style="background:var(--bg);border-radius:8px;padding:12px 14px">
+                <p style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Assessed by</p>
+                <p style="font-size:13px;color:var(--text)">Other coach of same hotel + ComIn student (four-eyed principle)</p>
+              </div>
+              <div style="background:var(--bg);border-radius:8px;padding:12px 14px">
+                <p style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Planning</p>
+                <p style="font-size:13px;color:var(--text)">Takes place in Week 10. Exact schedule provided around Week 6.</p>
+              </div>
+              <div style="background:var(--bg);border-radius:8px;padding:12px 14px">
+                <p style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Grade result</p>
+                <p style="font-size:13px;color:var(--text)">Calculated directly after you leave. Communicated within 15 working days after BC submission.</p>
+              </div>
+            </div>
+
+            <div class="alert warn" style="margin-bottom:14px">
+              <span class="alert-icon">📵</span>
+              <div>Phone and laptop are <strong>turned off and in your bag</strong>. No laptop, no screen, no tech of any kind during the pitch. You may bring your business case and/or individual contribution on paper, but it is not required.</div>
+            </div>
+
+            <!-- FAQs -->
+            <div style="margin-bottom:18px">
+              <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Frequently asked</p>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    💬 What is a pitch without digital presentation tools?
+                  </button>
+                  <div style="display:none;padding:10px 14px;font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--border)">
+                    Exactly that — no laptop, no screen, no tech. Solely verbal.
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    💬 Can I bring something on paper?
+                  </button>
+                  <div style="display:none;padding:10px 14px;font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--border)">
+                    Sure, you can be creative — but know that you only have 5 minutes.
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                  <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                    💬 What if I am ill?
+                  </button>
+                  <div style="display:none;padding:10px 14px;font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--border)">
+                    Check <em>Course information → Frequently Asked Questions</em> in Moodle.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Structure timeline -->
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Session structure</p>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:18px">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="background:var(--purple);color:white;border-radius:5px;padding:2px 9px;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;min-width:64px;text-align:center">0–1 min</span>
+                <p style="font-size:13px;line-height:1.6;color:var(--text)">Welcome &amp; explanation of the oral structure by the assessor.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="background:var(--purple);color:white;border-radius:5px;padding:2px 9px;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;min-width:64px;text-align:center">2–6 min</span>
+                <p style="font-size:13px;line-height:1.6;color:var(--text)"><strong>Your pitch</strong> — present your concept, the design approach used to reach it, and verbally justify the business case. Solely verbal, no tech. At 5 minutes, time is indicated and you have max. 1 minute to wrap up.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="background:var(--purple);color:white;border-radius:5px;padding:2px 9px;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;min-width:64px;text-align:center">7–30 min</span>
+                <p style="font-size:13px;line-height:1.6;color:var(--text)"><strong>Q&amp;A</strong> — questions based on your pitch and business case assessment, focused on the 6 rubric criteria below.</p>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="background:var(--muted);color:white;border-radius:5px;padding:2px 9px;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;min-width:64px;text-align:center">After</span>
+                <p style="font-size:13px;line-height:1.6;color:var(--muted)">Score calculated by assessor after you leave. Used to calculate your final Professional Product grade.</p>
+              </div>
+            </div>
+
+            <!-- Grade method -->
+            <div class="alert info" style="margin-bottom:18px">
+              <span class="alert-icon">🧮</span>
+              <div>An integer grade is provided on every element: HI&nbsp;=&nbsp;2, INS&nbsp;=&nbsp;4, SUF&nbsp;=&nbsp;6, GOO&nbsp;=&nbsp;8, EXC&nbsp;=&nbsp;10. <strong>The final oral score is the average of all six criteria.</strong></div>
+            </div>
+
+            <!-- Rubric -->
+            <p style="font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Assessment rubric — 6 criteria</p>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:4px">
+
+              <!-- 1 Empathize -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--teal);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">1</span> Empathize
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Needs &amp; perspectives of clients and stakeholders</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that clarifies the needs and perspectives of clients and stakeholders.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Insights from research, stakeholder interviews, and observations are clearly articulated and actionable. Uses empathy effectively to define the problem. Shows depth in identifying underlying challenges or pain points through empathy-based methods.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Insights are articulated but may lack depth or actionability. Empathy is used to define the problem but may not fully uncover underlying challenges.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Insights are unclear or not actionable. Empathy is not effectively used to define the problem. Fails to identify underlying challenges or pain points.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2 Define -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--accent);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">2</span> Define
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Clear and impactful problem statement</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that leads to a clear and impactful problem statement, translated into a meaningful challenge.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Problem statement is specific, focused, and actionable, aligning with the client's goals. Synthesizes research findings into a coherent narrative. Presents findings in a structured way, identifying root causes and patterns.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Problem statement is clear but may lack specificity or focus. Research findings are synthesized but may not form a coherent narrative. Presentation is structured but may miss some root causes or patterns.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Problem statement is vague or not actionable. Research findings are not synthesized into a coherent narrative. Presentation is unstructured and fails to identify root causes or patterns.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3 Ideate -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--purple);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">3</span> Ideate
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Diverse and innovative ideas</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that generates diverse and innovative ideas based on design-thinking techniques.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Offers a variety of creative solutions with evidence of brainstorming methodologies. Evaluates and selects ideas with strategic reasoning. Ideas align with feasibility, desirability, and viability criteria in the client's context.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Offers some creative solutions but may lack variety. Limited evidence of brainstorming methodologies. Evaluates ideas but may lack strategic reasoning. Ideas partially align with feasibility, desirability, and viability criteria.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Offers few or no creative solutions. No evidence of brainstorming methodologies. Fails to evaluate ideas with strategic reasoning. Ideas do not align with feasibility, desirability, and viability criteria.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Prototype -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--coral);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">4</span> Prototype
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Tangible representations for testing</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that develops tangible representations of concepts for testing.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Prototypes (physical, digital, or conceptual) are well-detailed and purpose-driven to gather feedback effectively. Iterates on prototypes based on feedback. Demonstrates openness to improvement and applies constructive feedback meaningfully.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Prototypes are developed but may lack detail or purpose. Iterates but may not fully incorporate feedback. Shows some openness to improvement but may not apply feedback effectively.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Prototypes are poorly developed or not purpose-driven. Fails to iterate based on feedback. Shows little or no openness to improvement and does not apply feedback.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5 Test -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--amber);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">5</span> Test
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Systematic feedback collection &amp; analysis</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that collects feedback systematically and analyzes results.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Uses structured methods for testing and communicates results clearly. Integrates feedback into final recommendations. Shows evidence of refining and strengthening concepts based on test outcomes.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Collects feedback but may lack systematic methods. Communicates results but may lack clarity. Integrates feedback into recommendations but may not fully refine concepts.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Fails to collect feedback systematically. Communicates results unclearly. Does not integrate feedback into recommendations or refine concepts.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6 Integration -->
+              <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden">
+                <button onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none'" style="width:100%;display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--bg);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text);text-align:left">
+                  <span style="background:var(--green);color:white;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;flex-shrink:0">6</span> Integration
+                  <span style="font-size:12px;color:var(--muted);margin-left:4px">Coherence across phases &amp; value of iteration</span>
+                </button>
+                <div style="display:none;border-top:1px solid var(--border)">
+                  <div style="padding:10px 16px 6px;font-size:12px;color:var(--muted);font-style:italic">Criterion: Understands the process that leads to integration of the separate steps of the design approach and is aware of the value of iteration.</div>
+                  <div style="display:flex;flex-direction:column;gap:0">
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-exc" style="flex-shrink:0;font-size:11px">EXC 10</span><p style="font-size:12px;line-height:1.6;color:#0d4a2e">Connects all steps into one logical, coherent development where one step leads to another. Is aware of the value of iteration and demonstrates having used it to the fullest extent.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-suf" style="flex-shrink:0;font-size:11px">SUF 6</span><p style="font-size:12px;line-height:1.6;color:#7a4c00">Makes some connections between the different steps, but lacks coherency at various points. Did not iterate, but is aware of the value of iteration.</p></div>
+                    <div style="padding:8px 16px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"><span class="grade-pill g-ins" style="flex-shrink:0;font-size:11px">INS 4</span><p style="font-size:12px;line-height:1.6;color:#8a1a0e">Is unable to show how the different steps are connected and is not aware of the value of iteration.</p></div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- end rubric -->
+          </div><!-- end padding -->
+
+          <!-- Prep checklist -->
+          <div style="border-top:1px solid var(--border)">
+            <p style="padding:12px 24px 4px;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted)">Preparation checklist</p>
           </div>
           <div class="checklist">
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can clearly explain and defend Empathize phase and choices</span></div>
@@ -2075,7 +2517,9 @@
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can clearly explain and defend Ideate phase and choices</span></div>
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can clearly explain and defend Prototype phase and choices</span></div>
             <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can clearly explain and defend Test phase and choices</span></div>
-            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can demonstrate how all phases connect and where iteration occurred</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Can demonstrate how all phases connect and where iteration occurred (Integration)</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">5-minute verbal pitch practised — concept, design approach, business case justification</span></div>
+            <div class="check-item" role="checkbox" tabindex="0" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggle(this)"><div class="checkmark"></div><span class="check-text">Phone and laptop ready to stay off and in bag</span><span class="check-tag" style="background:var(--red-light);color:var(--red)">Required</span></div>
           </div>
         </div>
 
@@ -2121,21 +2565,9 @@
             <span class="calc-label">Your Oral Score</span>
             <select class="calc-select" id="calc-oral" onchange="calcGrade()">
               <option value="2">2 — Highly Insufficient</option>
-              <option value="2.5">2.5</option>
-              <option value="3">3</option>
-              <option value="3.5">3.5</option>
               <option value="4">4 — Insufficient</option>
-              <option value="4.5">4.5</option>
-              <option value="5">5</option>
-              <option value="5.5">5.5</option>
               <option value="6" selected>6 — Sufficient</option>
-              <option value="6.5">6.5</option>
-              <option value="7">7</option>
-              <option value="7.5">7.5</option>
               <option value="8">8 — Good</option>
-              <option value="8.5">8.5</option>
-              <option value="9">9</option>
-              <option value="9.5">9.5</option>
               <option value="10">10 — Excellent</option>
             </select>
           </div>
